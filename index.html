@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiKoBaelah - Portal Sekolah</title>
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Philosopher (Elegan/Unik) & Outfit (Modern) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -17,7 +17,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Menggunakan font elegan khusus untuk judul dan nama */
+        h1, h2, h3, .school-name, .app-title {
+            font-family: 'Philosopher', sans-serif;
         }
 
         body {
@@ -40,61 +45,98 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- Header Portal --- */
+        /* --- Header Portal (Layout Baru) --- */
         .header {
             width: 100%;
-            /* Efek kaca tembus pandang dipertebal agar teks kontras dengan background cerah */
+            /* Efek kaca tembus pandang */
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             color: var(--text-dark);
-            padding: 40px 20px;
-            text-align: center;
+            padding: 30px 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 40px;
-            border-bottom: 3px solid #0d6efd;
+            border-bottom: 4px solid #0d6efd;
+            
+            /* Dibagi dua kiri dan kanan untuk versi Laptop */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* --- Header Kiri: Instansi & Sekolah --- */
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            max-width: 60%;
         }
 
         .logo-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Styling untuk Logo Instansi & Sekolah */
-        .logo-container img {
-            width: 80px; /* Atur ukuran logo di sini */
-            height: 80px;
-            object-fit: contain;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            color: #0d6efd;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .header .subtitle {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #495057;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .header .school-name {
-            font-size: 1.5rem;
+        .logo-container img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .agency-name {
+            font-size: 0.95rem;
             font-weight: 600;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .school-name {
+            font-size: 2rem;
+            font-weight: 700;
             color: #212529;
             margin-bottom: 5px;
         }
 
-        .header .school-address {
+        .school-address {
             font-size: 0.95rem;
-            font-weight: 300;
-            color: #6c757d;
+            font-weight: 400;
+            color: #495057;
+        }
+
+        /* --- Header Kanan: Logo & Nama Aplikasi --- */
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .app-header-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        .app-title {
+            font-size: 2.2rem;
+            color: #0d6efd;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .app-subtitle {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #495057;
         }
 
         /* --- Grid Aplikasi --- */
@@ -188,33 +230,62 @@
             border-top: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* Responsif untuk layar HP */
-        @media (max-width: 600px) {
-            .logo-container img { width: 60px; height: 60px; }
-            .header h1 { font-size: 2rem; }
-            .header .school-name { font-size: 1.2rem; }
-            .app-grid { grid-template-columns: 1fr; gap: 20px;} /* Jadi 1 kolom di HP agar gambar jelas */
+        /* Responsif untuk layar HP & Tablet */
+        @media (max-width: 850px) {
+            .header {
+                flex-direction: column; /* Ubah formasi jadi atas-bawah */
+                justify-content: center;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .header-left, .header-right {
+                align-items: center;
+                text-align: center;
+                max-width: 100%;
+            }
+
+            /* Beri garis pembatas antara sekolah dan aplikasi di mode HP */
+            .header-right {
+                margin-top: 25px;
+                padding-top: 25px;
+                border-top: 1px dashed rgba(0,0,0,0.2);
+                width: 100%;
+            }
+
+            .school-name { font-size: 1.6rem; }
+            .app-title { font-size: 1.8rem; }
+            .app-grid { grid-template-columns: 1fr; gap: 20px;}
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <!-- Area Logo Bersebelahan -->
-        <div class="logo-container">
-            <!-- Ganti URL src di bawah dengan link logo instansi/dinas Anda -->
-            <img src="https://placehold.co/150x150/png?text=Logo+Instansi" alt="Logo Instansi">
-            
-            <!-- Ganti URL src di bawah dengan link logo sekolah Anda -->
-            <img src="https://placehold.co/150x150/png?text=Logo+Sekolah" alt="Logo Sekolah">
+        <!-- Bagian Kiri: Identitas Instansi & Sekolah -->
+        <div class="header-left">
+            <div class="logo-container">
+                <!-- Ganti link dengan logo instansi Anda -->
+                <img src="https://placehold.co/150x150/png?text=Logo+Dinas" alt="Logo Instansi">
+                <!-- Ganti link dengan logo sekolah Anda -->
+                <img src="https://placehold.co/150x150/png?text=Logo+Sekolah" alt="Logo Sekolah">
+            </div>
+            <!-- Nama Instansi -->
+            <div class="agency-name">Kementerian Pendidikan dan Kebudayaan</div>
+            <!-- Nama & Alamat Sekolah -->
+            <h2 class="school-name">SMA Negeri 1 Contoh Indonesia</h2>
+            <p class="school-address">Jl. Pendidikan No. 123, Kelurahan Belajar, Kecamatan Ilmu, Kota Cerdas</p>
         </div>
 
-        <h1>SiKoBaelah</h1>
-        <p class="subtitle">Sistem Kolaboratif Elektronik Sekolah</p>
-        
-        <!-- Nama & Alamat Sekolah -->
-        <h2 class="school-name">SMA Negeri 1 Contoh Indonesia</h2>
-        <p class="school-address">Jl. Pendidikan No. 123, Kelurahan Belajar, Kecamatan Ilmu, Kota Cerdas</p>
+        <!-- Bagian Kanan: Identitas Aplikasi -->
+        <div class="header-right">
+            <!-- Ganti URL src dengan link logo aplikasi SiKoBaelah/Simisterbin -->
+            <img src="https://placehold.co/150x150/0d6efd/ffffff/png?text=App+Logo" alt="Logo Aplikasi" class="app-header-logo">
+            
+            <!-- Anda menyebut 'simisterbin', silakan ubah teks di bawah jika namanya Simisterbin -->
+            <h1 class="app-title">SiKoBaelah</h1>
+            <p class="app-subtitle">Sistem Kolaboratif Elektronik Sekolah</p>
+        </div>
     </div>
 
     <div class="app-grid">
