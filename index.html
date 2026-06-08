@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIKoBaELah - Sistem Kolaboratif berBasis Elektronik Sekolah</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SiKoBaelah - Sistem Kolaboratif berbasis Elektronik Sekolah</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #0d6efd;
             --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
             --text-dark: #333333;
-            --text-muted: #6c757d;
         }
 
         * {
@@ -32,153 +29,225 @@
             min-height: 100vh;
         }
 
-        /* Header Portal */
+        /* --- Header Portal --- */
         .header {
             width: 100%;
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-            color: white;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            color: var(--text-dark);
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 40px;
+            border-bottom: 3px solid #0d6efd;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling untuk Logo Instansi & Sekolah */
+        .logo-container img {
+            width: 80px; /* Atur ukuran logo di sini */
+            height: 80px;
+            object-fit: contain;
         }
 
         .header h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 600;
+            color: #0d6efd;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
-        .header p {
+        .header .subtitle {
             font-size: 1.1rem;
-            font-weight: 300;
-            opacity: 0.9;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 15px;
         }
 
-        /* Grid Aplikasi */
+        .header .school-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 5px;
+        }
+
+        .header .school-address {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #6c757d;
+        }
+
+        /* --- Grid Aplikasi --- */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
             width: 100%;
             max-width: 1200px;
             padding: 0 20px;
+            margin-bottom: 40px;
         }
 
-        /* Desain Kartu Aplikasi */
+        /* Desain Kartu Aplikasi Berwarna */
         .app-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
             text-decoration: none;
-            color: var(--text-dark);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.02);
+            color: white; /* Teks warna putih agar kontras dengan background warna */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
-            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
-        .icon-container {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(13, 110, 253, 0.1);
-            color: var(--primary-color);
-            border-radius: 50%;
+        /* Warna Latar Belakang Kartu (Bisa ditambah sesuai selera) */
+        .bg-gradient-blue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+        .bg-gradient-purple { background: linear-gradient(135deg, #9b23ea 0%, #5f72bd 100%); }
+        .bg-gradient-green { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .bg-gradient-pink { background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); }
+
+        /* Container untuk gambar logo aplikasi */
+        .app-logo-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: white; /* Kotak putih agar logo aplikasi terlihat jelas */
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
             margin-bottom: 20px;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .app-card:hover .icon-container {
-            background-color: var(--primary-color);
-            color: white;
+        .app-card:hover .app-logo-wrapper {
+            transform: scale(1.1);
+        }
+
+        .app-logo-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .app-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .app-card p {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            opacity: 0.9;
+            line-height: 1.4;
         }
 
-        /* Footer */
+        /* --- Footer --- */
         .footer {
             margin-top: auto;
             padding: 20px;
             text-align: center;
-            color: var(--text-muted);
+            color: #6c757d;
             font-size: 0.9rem;
+            width: 100%;
+            background-color: white;
+            border-top: 1px solid #e9ecef;
         }
 
         /* Responsif untuk layar HP */
         @media (max-width: 600px) {
+            .logo-container img { width: 60px; height: 60px; }
             .header h1 { font-size: 2rem; }
-            .app-grid { grid-template-columns: 1fr 1fr; gap: 15px;}
-            .app-card { padding: 20px 10px; }
-            .icon-container { width: 50px; height: 50px; font-size: 1.5rem; }
-            .app-card h3 { font-size: 1rem; }
+            .header .school-name { font-size: 1.2rem; }
+            .app-grid { grid-template-columns: 1fr; gap: 20px;} /* Jadi 1 kolom di HP agar gambar jelas */
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>SIKoBaELah</h1>
-        <p>Sistem Kolaboratif berBasis Elektronik Sekolah</p>
+        <!-- Area Logo Bersebelahan -->
+        <div class="logo-container">
+            <!-- Ganti URL src di bawah dengan link logo instansi/dinas Anda -->
+            <img src="https://placehold.co/150x150/png?text=Logo+Instansi" alt="Logo Instansi">
+            
+            <!-- Ganti URL src di bawah dengan link logo sekolah Anda -->
+            <img src="https://placehold.co/150x150/png?text=Logo+Sekolah" alt="Logo Sekolah">
+        </div>
+
+        <h1>SiKoBaelah</h1>
+        <p class="subtitle">Sistem Kolaboratif Elektronik Sekolah</p>
+        
+        <!-- Nama & Alamat Sekolah -->
+        <h2 class="school-name">SMA Negeri 1 Contoh Indonesia</h2>
+        <p class="school-address">Jl. Pendidikan No. 123, Kelurahan Belajar, Kecamatan Ilmu, Kota Cerdas</p>
     </div>
 
     <div class="app-grid">
-        <a href="https://link-ke-aplikasi-surat.com" class="app-card" target="_blank">
-            <div class="icon-container">
-                <i class="fas fa-envelope-open-text"></i>
+        <!-- Modul Surat (Warna Biru) -->
+        <a href="https://link-ke-aplikasi-surat.com" class="app-card bg-gradient-blue" target="_blank">
+            <div class="app-logo-wrapper">
+                <!-- Ganti link src dengan gambar logo aplikasi surat -->
+                <img src="https://placehold.co/100x100/png?text=Logo+Surat" alt="Logo Surat">
             </div>
             <h3>e-Surat</h3>
             <p>Manajemen arsip dan disposisi surat elektronik</p>
         </a>
 
-        <a href="https://link-ke-aplikasi-perpus.com" class="app-card" target="_blank">
-            <div class="icon-container">
-                <i class="fas fa-book-reader"></i>
+        <!-- Modul Perpustakaan (Warna Jingga) -->
+        <a href="https://link-ke-aplikasi-perpus.com" class="app-card bg-gradient-orange" target="_blank">
+            <div class="app-logo-wrapper">
+                <!-- Ganti link src dengan gambar logo aplikasi perpus -->
+                <img src="https://placehold.co/100x100/png?text=Logo+Perpus" alt="Logo Perpus">
             </div>
             <h3>Perpustakaan</h3>
             <p>Katalog buku dan riwayat peminjaman siswa</p>
         </a>
 
-        <a href="https://link-ke-buku-induk.com" class="app-card" target="_blank">
-            <div class="icon-container">
-                <i class="fas fa-users"></i>
+        <!-- Modul Buku Induk (Warna Ungu) -->
+        <a href="https://link-ke-buku-induk.com" class="app-card bg-gradient-purple" target="_blank">
+            <div class="app-logo-wrapper">
+                 <!-- Ganti link src dengan gambar logo aplikasi buku induk -->
+                <img src="https://placehold.co/100x100/png?text=Logo+Siswa" alt="Logo Buku Induk">
             </div>
             <h3>Buku Induk</h3>
             <p>Data administrasi siswa dan kepegawaian</p>
         </a>
 
-        <a href="#" class="app-card" target="_blank">
-            <div class="icon-container">
-                <i class="fas fa-graduation-cap"></i>
+        <!-- Modul Nilai / Akademik (Warna Hijau) -->
+        <a href="https://link-ke-aplikasi-akademik.com" class="app-card bg-gradient-green" target="_blank">
+            <div class="app-logo-wrapper">
+                 <!-- Ganti link src dengan gambar logo aplikasi akademik -->
+                <img src="https://placehold.co/100x100/png?text=Logo+Nilai" alt="Logo Akademik">
             </div>
             <h3>Akademik</h3>
             <p>Sistem informasi nilai dan absensi</p>
         </a>
         
-        </div>
+        <!-- Tambahkan modul lain secara manual di bawah ini. 
+             Anda bisa memakai class bg-gradient-pink, atau mengulang warna yang sudah ada -->
+    </div>
 
     <div class="footer">
-        &copy; 2026 SiKoBaelah. Sistem Informasi Terintegrasi.
+        &copy; 2026 SiKoBaelah. Sistem Informasi Terintegrasi - SMA Negeri 1 Contoh Indonesia.
     </div>
 
 </body>
