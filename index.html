@@ -257,9 +257,142 @@
             .app-title { font-size: 1.8rem; }
             .app-grid { grid-template-columns: 1fr; gap: 20px;}
         }
+
+        <!-- ... existing code ... -->
+            .school-name { font-size: 1.6rem; }
+            .app-title { font-size: 1.8rem; }
+            .app-grid { grid-template-columns: 1fr; gap: 20px;}
+        }
+
+        /* --- Landing Page --- */
+        #landing-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            position: fixed; /* Menutupi seluruh layar */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Selalu berada di paling atas */
+        }
+
+        .landing-content {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            max-width: 90%;
+            width: 450px;
+            /* Efek melayang halus */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .landing-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
+        .landing-title {
+            font-size: 2.8rem;
+            color: #0d6efd;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-family: 'Philosopher', sans-serif;
+            font-weight: 700;
+        }
+
+        .landing-school {
+            font-size: 1.2rem;
+            color: #495057;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .btn-portal {
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-portal:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.6);
+        }
+
+        /* Transisi Hilang dan Muncul */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* Menyembunyikan Portal Utama di Awal */
+        #main-portal {
+            display: none; 
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+        #main-portal.show {
+            display: flex;
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body>
+
+    <div id="landing-page">
+        <div class="landing-content">
+            <!-- Ganti src di bawah ini dengan logo SiKoBaelah Anda -->
+            <img src="https://placehold.co/150x150/0d6efd/ffffff/png?text=App+Logo" alt="Logo Aplikasi" class="landing-logo">
+            <h1 class="landing-title">SiKoBaelah</h1>
+            <p class="landing-school">SMA Negeri 1 Contoh Indonesia</p>
+            <button class="btn-portal" onclick="masukPortal()">Masuk Portal Aplikasi</button>
+        </div>
+    </div>
+
+    <!-- Kontainer ini disembunyikan sampai tombol di atas diklik -->
+    <div id="main-portal">
+        <div class="header">
+<!-- ... existing code ... -->
+        <!-- Tambahkan modul lain secara manual di bawah ini. 
+             Anda bisa memakai class bg-gradient-pink, atau mengulang warna yang sudah ada -->
+    </div>
+
+    <div class="footer">
+        &copy; 2026 SiKoBaelah. Sistem Informasi Terintegrasi - SMA Negeri 1 Contoh Indonesia.
+    </div>
+
+    <!-- Penutup Div #main-portal (Harus ada) -->
+    </div>
 
     <div class="header">
         <!-- Bagian Kiri: Identitas Instansi & Sekolah -->
@@ -337,5 +470,26 @@
         &copy; 2026 SiKoBaelah. Sistem Informasi Terintegrasi - SMA Negeri 1 Contoh Indonesia.
     </div>
 
+
+        <script>
+        function masukPortal() {
+            const landingPage = document.getElementById('landing-page');
+            const mainPortal = document.getElementById('main-portal');
+
+            // 1. Berikan efek pudar perlahan pada halaman landing
+            landingPage.classList.add('fade-out');
+
+            // 2. Tunggu 500ms (sesuai durasi efek di CSS), lalu hilangkan dan tampilkan portal
+            setTimeout(() => {
+                landingPage.style.display = 'none';
+                
+                // Tampilkan portal utama
+                mainPortal.classList.add('show');
+                
+                // Kembalikan ke paling atas jika tidak sengaja ter-scroll
+                window.scrollTo(0, 0);
+            }, 500); 
+        }
+    </script>
 </body>
 </html>
