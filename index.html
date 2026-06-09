@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiKoBaelah SMAN 15 Tebo</title>
     <link rel="icon" type="image/png" href="./logo.png">
-    <!-- Google Fonts: Philosopher (Elegan/Unik) & Outfit (Modern) -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <style>
         :root {
@@ -260,7 +262,7 @@
             padding: 30px 20px;
             text-align: center;
             text-decoration: none;
-            color: white; /* Teks warna putih agar kontras dengan background warna */
+            color: white; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
@@ -287,7 +289,7 @@
         .app-logo-wrapper {
             width: 80px;
             height: 80px;
-            background-color: white; /* Kotak putih agar logo aplikasi terlihat jelas */
+            background-color: white; 
             border-radius: 20px;
             display: flex;
             justify-content: center;
@@ -321,6 +323,30 @@
             line-height: 1.4;
         }
 
+        /* TAMBAHAN: Desain Tombol Kembali */
+        .btn-kembali {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-kembali:hover {
+            background: white;
+            color: #0d6efd;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
         /* --- Footer --- */
         .footer {
             padding: 20px;
@@ -337,7 +363,7 @@
         /* --- Responsif (HP & Tablet) --- */
         @media (max-width: 850px) {
             .header {
-                flex-direction: column; /* Ubah formasi jadi atas-bawah */
+                flex-direction: column;
                 justify-content: center;
                 text-align: center;
                 padding: 30px 20px;
@@ -353,7 +379,6 @@
                 justify-content: center;
             }
 
-            /* Beri garis pembatas antara sekolah dan aplikasi di mode HP */
             .header-right {
                 margin-top: 25px;
                 padding-top: 25px;
@@ -369,12 +394,10 @@
 </head>
 <body>
 
-    <!-- ==============================================
-         1. HALAMAN LANDING PAGE (PEMBUKA)
-         ============================================== -->
+    <audio id="suara-sorakan" src="https://assets.mixkit.co/active_storage/sfx/518/518-preview.mp3" preload="auto"></audio>
+
     <div id="landing-page">
         <div class="landing-content">
-            <!-- Ganti URL ini dengan logo utama portal Anda -->
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s250/sikobaelah.png?text=Logo+Portal" alt="Logo Aplikasi" class="landing-logo">
             
             <h1 class="landing-title">SiKoBaELah</h1>
@@ -384,19 +407,12 @@
         </div>
     </div>
 
-    <!-- ==============================================
-         2. HALAMAN PORTAL UTAMA (Disembunyikan di awal)
-         ============================================== -->
     <div id="main-portal">
         
-        <!-- HEADER -->
         <div class="header">
-            <!-- Bagian Kiri: Identitas Instansi & Sekolah -->
             <div class="header-left">
                 <div class="logo-container">
-                    <!-- Ganti link dengan logo instansi/dinas Anda -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png?text=Logo+Dinas" alt="Logo Instansi">
-                    <!-- Ganti link dengan logo sekolah Anda -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh35GVy_49H4Y0eQX7Oo37nMSd9yX3NEp84Tsysnr-_fWe3JyHd1Fs-PgakPfIsZ8ly_b-VxhQO8qmo7P8tNkeBeYnqr5Z1E2BxD1VxYqgQr0sABUWiLJ6SfkGFpD_yxmdtSk3LmsfZqcbgnxqnsdJAv1vusaTi51ZktMIFcsuucJthAbmXMAxxMsXG-gYG/s150/logo%20sma.png?text=Logo+Sekolah" alt="Logo Sekolah">
                 </div>
                 <div class="agency-name">PEMERINTAH PROVINSI JAMBI</div>
@@ -404,90 +420,110 @@
                 <p class="school-address">Jl. Yogyakarta, SP2, Sekutur Jaya, Kecamatan Serai Serumpun, Kab. Tebo, Jambi</p>
             </div>
 
-            <!-- Bagian Kanan: Identitas Aplikasi -->
             <div class="header-right">
-                <!-- Ganti URL src dengan link logo aplikasi SiKoBaelah/Simisterbin -->
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s150/sikobaelah.png?text=Logo+Portal" alt="Logo Aplikasi" class="app-header-logo">
                 <h1 class="app-title">SiKoBaELah</h1>
                 <p class="app-subtitle">Sistem Kolaboratif berBasis Elektronik Sekolah</p>
             </div>
         </div>
 
-        <!-- GRID APLIKASI -->
         <div class="app-grid">
-            
-            <!-- Modul 1: Surat (Warna Biru) -->
             <a href="https://sidimas.sman15tebo.sch.id/" class="app-card bg-gradient-blue" target="_blank">
                 <div class="app-logo-wrapper">
-                    <!-- Ganti link src dengan gambar logo aplikasi surat -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJMjNKEg_eqb9D8_w_NyJSeK7fCB2A9sZNM7y2clH7yd3hk9XvwKC5AbMTeFfZKpKf0v4UxRp18J10z1v0fZ1dUrjE3litei8EMO5VqBEspVNiW-yPpGOZPLA_kBrkGT0Tj7tLDjU9WqP7ALcK9nEd7aS7wnloq1fH1-gyICUy5ODT7nLetVa6TJZqy2ZO/s100/logo%20sidimas%20jpg.jpg?text=Logo+Surat" alt="Logo Surat">
                 </div>
                 <h3>SiDiMAS</h3>
                 <p>Sistem Digital Manajemen Arsip Surat</p>
             </a>
 
-            <!-- Modul 2: Perpustakaan (Warna Jingga) -->
             <a href="https://sibukinstal.sman15tebo.sch.id/" class="app-card bg-gradient-orange" target="_blank">
                 <div class="app-logo-wrapper">
-                    <!-- Ganti link src dengan gambar logo aplikasi perpus -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpnOpoQv4zKvXKWgVq_tFB5gKYVbjd8i-fgApUH-b36SrMAaqRX8V7ZFU3bU60gt8I8d77wlTeRI_F8UdMGaZl26EvQw6bBiwtFAygUMiaXSM7tDN-xiPl6r3RguMlwQ3N4BQ-fWaJ62_b318672r9c-iPiGHLhd9y4QHDPBc9SoFpTPwdDp0rkgLf6B4E/s100/Logo%20SiBuk%20InSTal.png?text=Logo+Perpus" alt="Logo Perpus">
                 </div>
                 <h3>SIBukInsTal</h3>
                 <p>Sistem Buku Induk Siswa Digital</p>
             </a>
 
-            <!-- Modul 3: Buku Induk (Warna Ungu) -->
             <a href="https://sie-mpus.sman15tebo.sch.id/" class="app-card bg-gradient-purple" target="_blank">
                 <div class="app-logo-wrapper">
-                    <!-- Ganti link src dengan gambar logo aplikasi buku induk -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKQaKy8lB3IXcmsdcPpZUorKzNCnUUlT8mEBvkDgnozpJRpbHdld-uSH0fWWOActJnaHg078VQ3GG5vwtr2ydeDh_3O_r5gnEOpcKmVE4-tiz9Blkb4mjVcToRFGJaODrYq_t4V0-8xB_lppMvuIko0OY0bXPrSK7fbMI_vLVGyBbvgUIRD4lI5P4ucoWw/s100/Logo%20SiE-MPus%20baru%20ok.png?text=Logo+Siswa" alt="Logo Buku Induk">
                 </div>
                 <h3>Si-EMPus</h3>
                 <p>Sistem E-Manajemen Perpustakaan Sekolah</p>
             </a>
 
-            <!-- Modul 4: Akademik (Warna Hijau) -->
             <a href="https://siladumas.sman15tebo.sch.id/" class="app-card bg-gradient-green" target="_blank">
                 <div class="app-logo-wrapper">
-                    <!-- Ganti link src dengan gambar logo aplikasi akademik -->
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdjNsHJpiWldIOoTgT0Jbxsv80rvFMNSeK2hILIls9ht9MSXw6HkOjvrZOtSH9lhA2IuLzkJUPHBeS-KPikbt9-MUHP4kH8NqAZ0UaJBPNg0_YtEQwrrXsXD47a49lkASmlBo466vpxVwRt3I-L_7Q-sPw-6rvonKlsXYSjPCxN3__C5CCo9epLC1mJfqV/s100/SiLaDuMas%20logo.png?text=Logo+Nilai" alt="Logo Akademik">
                 </div>
                 <h3>SiLaDuMas</h3>
                 <p>Sistem Layanan Pengaduan Masyarakat</p>
             </a>
+        </div> 
 
-            <!-- TIPS: Jika ingin menambah aplikasi, cukup COPY salah satu blok <a href="..."> di atas dan letakkan di sini -->
+        <button class="btn-kembali" onclick="kembaliKeDepan()">
+            &#8592; Kembali ke Halaman Depan
+        </button>
 
-        </div> <!-- Penutup Grid -->
-
-        <!-- FOOTER -->
         <div class="footer">
             &copy; 2026 SiKoBaELah - SMA Negeri 15 Tebo.
         </div>
 
-    </div> <!-- Penutup Div #main-portal -->
+    </div> 
 
-    <!-- ==============================================
-         3. SCRIPT INTERAKSI LANDING PAGE -> PORTAL
-         ============================================== -->
     <script>
         function masukPortal() {
+            // 1. Mainkan Suara Sorakan
+            const suara = document.getElementById('suara-sorakan');
+            suara.volume = 0.5; // Mengatur volume (opsional)
+            suara.play();
+
+            // 2. Ledakan Kertas Mengkilat (Confetti) menggunakan library
+            confetti({
+                particleCount: 200,    // Jumlah kertas
+                spread: 120,           // Lebar ledakan
+                origin: { y: 0.6 },    // Titik awal ledakan (sedikit di bawah tengah)
+                colors: ['#ff007a', '#7000ff', '#0055ff', '#00bfff', '#f6d365'], // Warna senada tema
+                zIndex: 9999           // Memastikan tampil paling depan
+            });
+
+            // 3. Transisi Halaman
             const landingPage = document.getElementById('landing-page');
             const mainPortal = document.getElementById('main-portal');
 
-            // 1. Berikan efek pudar perlahan pada halaman landing
+            // Beri efek pudar perlahan pada halaman landing
             landingPage.classList.add('fade-out');
 
-            // 2. Tunggu 500ms (sesuai durasi efek CSS), lalu hilangkan dan tampilkan portal
+            // Tunggu 500ms, lalu hilangkan dan tampilkan portal
             setTimeout(() => {
                 landingPage.style.display = 'none';
                 
                 // Tampilkan portal utama
                 mainPortal.classList.add('show');
                 
-                // Kembalikan ke paling atas jika tidak sengaja ter-scroll
+                // Kembalikan ke paling atas
                 window.scrollTo(0, 0);
             }, 500); 
+        }
+
+        // TAMBAHAN: Fungsi untuk kembali ke landing page
+        function kembaliKeDepan() {
+            const landingPage = document.getElementById('landing-page');
+            const mainPortal = document.getElementById('main-portal');
+
+            // 1. Pudarkan portal utama
+            mainPortal.classList.remove('show');
+
+            // 2. Tunggu sebentar agar transisi opacity terlihat, lalu tukar tampilan
+            setTimeout(() => {
+                landingPage.style.display = 'flex';
+                
+                // Jeda sangat kecil untuk memancing animasi CSS memudar masuk
+                setTimeout(() => {
+                    landingPage.classList.remove('fade-out');
+                    window.scrollTo(0, 0);
+                }, 50);
+            }, 500);
         }
     </script>
 </body>
