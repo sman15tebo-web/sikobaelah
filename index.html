@@ -299,7 +299,7 @@
            ========================================================= */
         @media (max-width: 850px) {
 
-            /* 1. Header Melayang di atas khusus saat masuk Portal Utama */
+            /* 1. Header Melayang di atas (App Bar) khusus aplikasi */
             .mobile-fixed-header {
                 display: flex;
                 position: fixed;
@@ -327,24 +327,23 @@
                 font-size: 1.5rem; color: var(--primary-color); font-weight: 700; margin: 0;
             }
 
-            /* 2. Beri jarak atas agar konten portal tidak tertutup header melayang */
+            /* 2. Beri jarak atas agar konten portal tidak tertutup App Bar */
             #main-portal { padding-top: 80px; padding-bottom: 90px; }
 
-            /* 3. Menghilangkan elemen yang sudah pindah ke header atas */
-            .header-right { display: none !important; } /* Sembunyikan Detail Aplikasi */
-            .prov-logo { display: none !important; } /* Sembunyikan Logo Instansi */
-            .agency-name { display: none !important; } /* Sembunyikan Nama Instansi */
+            /* 3. SEMBUNYIKAN HANYA DETAIL APLIKASI DI LAYAR UTAMA (Karena sudah di App Bar) */
+            .header-right { display: none !important; }
 
-            /* 4. Menengahkan info Sekolah yang tersisa */
+            /* 4. Menengahkan info Instansi dan Sekolah yang tetap tampil di layar utama HP */
             .header {
                 flex-direction: column; text-align: center; 
                 padding: 10px 20px 30px; border-bottom: none; 
                 background: transparent; box-shadow: none; margin-bottom: 10px;
             }
             .header-left { align-items: center; max-width: 100%; width: 100%; }
-            .logo-container { justify-content: center; margin-bottom: 10px; }
-            .school-name { font-size: 1.8rem; text-shadow: 1px 1px 2px rgba(255,255,255,0.5); }
-            .school-address { font-size: 0.9rem; color: #212529; }
+            .logo-container { justify-content: center; gap: 15px; margin-bottom: 15px; }
+            .agency-name { color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); font-size: 1rem; }
+            .school-name { font-size: 1.8rem; text-shadow: 1px 1px 2px rgba(255,255,255,0.5); margin-bottom: 5px;}
+            .school-address { font-size: 0.9rem; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
             
             /* Sembunyikan Tombol Desktop */
             .desktop-action-btns { display: none !important; }
@@ -412,18 +411,18 @@
     <!-- 2. PORTAL UTAMA -->
     <div id="main-portal">
         
-        <!-- HEADER ATAS MELAYANG (HANYA MUNCUL DI HP) -->
+        <!-- HEADER ATAS MELAYANG (APP BAR) - HANYA MUNCUL DI HP -->
         <div class="mobile-fixed-header">
             <h1 class="app-title-mobile">SiKoBaELah</h1>
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s150/sikobaelah.png" alt="Logo Aplikasi Mobile">
         </div>
 
-        <!-- HEADER UTAMA (RESPONSIF DESKTOP/HP) -->
+        <!-- HEADER UTAMA (Instansi & Sekolah) -->
         <div class="header">
             <div class="header-left">
                 <div class="logo-container">
-                    <!-- Class 'prov-logo' digunakan untuk menyembunyikan logo ini di versi HP -->
-                    <img class="prov-logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png" alt="Logo Instansi">
+                    <!-- Logo Provinsi dan Sekolah sekarang tetap tampil di HP -->
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png" alt="Logo Instansi">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh35GVy_49H4Y0eQX7Oo37nMSd9yX3NEp84Tsysnr-_fWe3JyHd1Fs-PgakPfIsZ8ly_b-VxhQO8qmo7P8tNkeBeYnqr5Z1E2BxD1VxYqgQr0sABUWiLJ6SfkGFpD_yxmdtSk3LmsfZqcbgnxqnsdJAv1vusaTi51ZktMIFcsuucJthAbmXMAxxMsXG-gYG/s150/logo%20sma.png" alt="Logo Sekolah">
                 </div>
                 <div class="agency-name">PEMERINTAH PROVINSI JAMBI</div>
@@ -431,7 +430,7 @@
                 <p class="school-address">Jl. Yogyakarta, SP2, Sekutur Jaya, Kecamatan Serai Serumpun, Kab. Tebo, Jambi</p>
             </div>
             
-            <!-- Elemen Kanan ini akan DIHILANGKAN di HP, karena dipindah ke Header Melayang -->
+            <!-- Elemen Kanan (Detail Aplikasi) INI yang disembunyikan di HP -->
             <div class="header-right">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s150/sikobaelah.png" alt="Logo Aplikasi" class="app-header-logo">
                 <h1 class="app-title">SiKoBaELah</h1>
