@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SiKoBaelah SMAN 15 Tebo</title>
     <link rel="icon" type="image/png" href="./logo.png">
     
@@ -13,6 +13,8 @@
     <style>
         :root {
             --text-dark: #333333;
+            --primary-color: #0d6efd;
+            --secondary-color: #0dcaf0;
         }
 
         * {
@@ -20,19 +22,18 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Outfit', sans-serif;
+            /* Mencegah highlight biru saat tap di HP */
+            -webkit-tap-highlight-color: transparent; 
         }
 
-        /* Menggunakan font elegan khusus untuk judul dan nama */
         h1, h2, h3, .school-name, .app-title, .landing-title {
             font-family: 'Philosopher', sans-serif;
         }
 
         body {
-            /* Latar Belakang Gradien Animasi yang Lebih Berani & Cerah */
             background: linear-gradient(-45deg, #ff007a, #7000ff, #0055ff, #00bfff);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            
             color: var(--text-dark);
             display: flex;
             flex-direction: column;
@@ -41,11 +42,39 @@
             overflow-x: hidden;
         }
 
-        /* Konfigurasi Pergerakan Latar Belakang */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        /* --- Header Khusus Mobile di Landing Page --- */
+        .mobile-top-header {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 15px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-top-header img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .mobile-top-header span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: 0.5px;
         }
 
         /* --- Landing Page --- */
@@ -55,10 +84,10 @@
             align-items: center;
             min-height: 100vh;
             width: 100%;
-            position: fixed; /* Menutupi seluruh layar */
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: 1000; /* Selalu berada di paling atas */
+            z-index: 1000;
         }
 
         .landing-content {
@@ -72,7 +101,6 @@
             border: 1px solid rgba(255,255,255,0.5);
             max-width: 90%;
             width: 450px;
-            /* Efek melayang halus */
             animation: float 6s ease-in-out infinite;
         }
 
@@ -94,7 +122,7 @@
 
         .landing-title {
             font-size: 2.8rem;
-            color: #0d6efd;
+            color: var(--primary-color);
             margin-bottom: 5px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             font-weight: 700;
@@ -107,8 +135,22 @@
             margin-bottom: 30px;
         }
 
+        /* --- Grup Tombol Landing (Desktop) --- */
+        .desktop-action-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .row-btns {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
         .btn-portal {
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
             padding: 15px 30px;
@@ -121,12 +163,24 @@
             width: 100%;
         }
 
-        .btn-portal:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.6);
+        .btn-portal:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13, 110, 253, 0.6); }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            flex: 1;
+            transition: all 0.3s ease;
         }
 
-        /* Transisi Hilang dan Muncul */
+        .btn-secondary:hover { background: var(--primary-color); color: white; }
+
+        /* Transisi Halaman */
         .fade-out {
             opacity: 0;
             visibility: hidden;
@@ -135,13 +189,14 @@
 
         /* --- Portal Utama --- */
         #main-portal {
-            display: none; /* Disembunyikan pada awalnya */
+            display: none;
             width: 100%;
             flex-direction: column;
             align-items: center;
             opacity: 0;
             transition: opacity 0.5s ease-in;
             min-height: 100vh;
+            padding-bottom: 20px; /* Jarak untuk desktop */
         }
 
         #main-portal.show {
@@ -149,102 +204,34 @@
             opacity: 1;
         }
 
-        /* --- Header Portal --- */
+        /* Header Portal */
         .header {
             width: 100%;
-            /* Efek kaca tembus pandang */
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            color: var(--text-dark);
             padding: 30px 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 40px;
-            border-bottom: 4px solid #0d6efd;
-            
-            /* Dibagi dua kiri dan kanan untuk versi Laptop */
+            border-bottom: 4px solid var(--primary-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 20px;
         }
 
-        /* Header Kiri: Instansi & Sekolah */
-        .header-left {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-            max-width: 60%;
-        }
+        .header-left { display: flex; flex-direction: column; align-items: flex-start; max-width: 60%; }
+        .logo-container { display: flex; gap: 15px; margin-bottom: 15px; }
+        .logo-container img { width: 70px; height: 70px; object-fit: contain; }
+        .agency-name { font-size: 0.95rem; font-weight: 600; color: #6c757d; letter-spacing: 1px; }
+        .school-name { font-size: 2rem; font-weight: 700; color: #212529; }
+        .school-address { font-size: 0.95rem; color: #495057; }
+        
+        .header-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+        .app-header-logo { width: 80px; height: 80px; margin-bottom: 10px; border-radius: 18px; background-color: white; }
+        .app-title { font-size: 2.2rem; color: var(--primary-color); font-weight: 700; }
+        .app-subtitle { font-size: 1.05rem; font-weight: 500; color: #495057; }
 
-        .logo-container {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .logo-container img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-        }
-
-        .agency-name {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #6c757d;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .school-name {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #212529;
-            margin-bottom: 5px;
-        }
-
-        .school-address {
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: #495057;
-        }
-
-        /* Header Kanan: Logo & Nama Aplikasi */
-        .header-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-        }
-
-        .app-header-logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
-            border-radius: 18px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            object-fit: cover;
-            background-color: white;
-        }
-
-        .app-title {
-            font-size: 2.2rem;
-            color: #0d6efd;
-            margin-bottom: 5px;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .app-subtitle {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #495057;
-        }
-
-        /* --- Grid Aplikasi --- */
+        /* Grid Aplikasi */
         .app-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -253,10 +240,9 @@
             max-width: 1200px;
             padding: 0 20px;
             margin-bottom: 40px;
-            flex: 1; /* Mendorong footer ke bawah */
+            flex: 1;
         }
 
-        /* Desain Kartu Aplikasi Berwarna */
         .app-card {
             border-radius: 20px;
             padding: 30px 20px;
@@ -268,127 +254,161 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
         }
+        .app-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
 
-        .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            border-color: rgba(255,255,255,0.5);
-        }
-
-        /* Warna Latar Belakang Kartu */
         .bg-gradient-blue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
         .bg-gradient-orange { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
         .bg-gradient-purple { background: linear-gradient(135deg, #9b23ea 0%, #5f72bd 100%); }
         .bg-gradient-green { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 
-        /* Container untuk gambar logo aplikasi */
         .app-logo-wrapper {
-            width: 80px;
-            height: 80px;
-            background-color: white; 
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            padding: 10px;
-            transition: transform 0.3s ease;
+            width: 80px; height: 80px; background-color: white; border-radius: 20px;
+            display: flex; justify-content: center; align-items: center; margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 10px; transition: transform 0.3s ease;
         }
+        .app-card:hover .app-logo-wrapper { transform: scale(1.1) rotate(5deg); }
+        .app-logo-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .app-card:hover .app-logo-wrapper {
-            transform: scale(1.1) rotate(5deg);
+        .btn-kembali-desktop {
+            background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+            color: white; border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 12px 30px; font-size: 1rem; font-weight: 600; border-radius: 50px;
+            cursor: pointer; transition: all 0.3s ease; margin-bottom: 30px;
         }
+        .btn-kembali-desktop:hover { background: white; color: var(--primary-color); }
 
-        .app-logo-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .app-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        .app-card p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        /* TAMBAHAN: Desain Tombol Kembali */
-        .btn-kembali {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn-kembali:hover {
-            background: white;
-            color: #0d6efd;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        /* --- Footer --- */
         .footer {
-            padding: 20px;
-            text-align: center;
-            color: #6c757d;
-            font-size: 0.9rem;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-top: 1px solid rgba(255,255,255,0.3);
+            padding: 20px; text-align: center; color: #6c757d; font-size: 0.9rem; width: 100%;
+            background: rgba(255, 255, 255, 0.85); border-top: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* --- Responsif (HP & Tablet) --- */
+        /* --- POPUP HELPDESK --- */
+        .modal {
+            display: none;
+            position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+            justify-content: center; align-items: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal.show { display: flex; opacity: 1; }
+        
+        .modal-content {
+            background: white; padding: 30px 25px; border-radius: 25px;
+            width: 90%; max-width: 350px; text-align: center; position: relative;
+            transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .modal.show .modal-content { transform: scale(1); }
+
+        .close-btn {
+            position: absolute; top: 15px; right: 20px; font-size: 1.8rem; color: #aaa;
+            cursor: pointer; transition: 0.2s; line-height: 1;
+        }
+        .close-btn:hover { color: #333; }
+        
+        .modal-content h2 { margin-bottom: 20px; color: #333; font-size: 1.5rem; }
+
+        .contact-links { display: flex; flex-direction: column; gap: 15px; }
+        .contact-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 12px; border-radius: 15px; text-decoration: none; color: white;
+            font-weight: 600; font-size: 1.05rem; transition: transform 0.2s;
+        }
+        .contact-btn:active { transform: scale(0.95); }
+        .btn-wa { background: #25D366; }
+        .btn-telp { background: #007bff; }
+        .btn-email { background: #dc3545; }
+
+        /* --- BOTTOM NAVIGATION (MENU BAWAH KHUSUS HP) --- */
+        .bottom-nav {
+            display: none; /* Sembunyikan di versi Laptop */
+        }
+
+        /* --- PENGATURAN RESPONSIVE & HP --- */
         @media (max-width: 850px) {
-            .header {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                padding: 30px 20px;
-            }
+            /* Tampilkan Logo Instansi di atas */
+            .mobile-top-header { display: flex; }
 
-            .header-left, .header-right {
-                align-items: center;
-                text-align: center;
-                max-width: 100%;
-            }
+            /* Sesuaikan Header Portal */
+            .header { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .header-left, .header-right { align-items: center; max-width: 100%; }
+            .logo-container { justify-content: center; }
+            .header-right { margin-top: 25px; padding-top: 25px; border-top: 1px dashed rgba(0,0,0,0.2); width: 100%; }
+            
+            /* Sembunyikan Tombol Desktop */
+            .desktop-action-btns { display: none !important; }
+            .btn-kembali-desktop { display: none !important; }
 
-            .logo-container {
-                justify-content: center;
-            }
+            /* Berikan ruang ekstra di bawah agar tidak tertutup menu */
+            #main-portal { padding-bottom: 90px; }
+            .footer { padding-bottom: 100px; border: none; background: transparent; color: white;}
 
-            .header-right {
-                margin-top: 25px;
-                padding-top: 25px;
-                border-top: 1px dashed rgba(0,0,0,0.2);
+            /* Tampilkan Menu Bawah Gaya Natif */
+            .bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
                 width: 100%;
+                height: 75px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                box-shadow: 0 -5px 25px rgba(0,0,0,0.15);
+                z-index: 2000;
+                justify-content: space-around;
+                align-items: center;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+                padding: 0 10px;
             }
 
-            .school-name { font-size: 1.6rem; }
-            .app-title { font-size: 1.8rem; }
-            .app-grid { grid-template-columns: 1fr; gap: 20px;}
+            .nav-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #6c757d;
+                background: none;
+                border: none;
+                cursor: pointer;
+                flex: 1;
+            }
+
+            .nav-icon { font-size: 1.5rem; margin-bottom: 4px; }
+            .nav-label { font-size: 0.75rem; font-weight: 600; }
+
+            /* Tombol Tengah Melayang (Floating) */
+            .nav-center-wrapper {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+            }
+
+            .nav-center-btn {
+                position: absolute;
+                top: -35px; /* Angkat ke atas menembus batas */
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border: 4px solid white;
+                box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                z-index: 2001;
+            }
+
+            .nav-center-btn:active { transform: scale(0.9); }
+            .nav-center-btn .nav-icon { font-size: 1.8rem; margin: 0; color: white; }
+            .center-label { position: absolute; bottom: -20px; color: var(--primary-color); }
         }
     </style>
 </head>
@@ -396,32 +416,40 @@
 
     <audio id="suara-sorakan" src="https://assets.mixkit.co/active_storage/sfx/518/518-preview.mp3" preload="auto"></audio>
 
+    <div class="mobile-top-header">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png" alt="Logo Dinas">
+        <span>PEMPROV JAMBI</span>
+    </div>
+
     <div id="landing-page">
         <div class="landing-content">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s250/sikobaelah.png?text=Logo+Portal" alt="Logo Aplikasi" class="landing-logo">
-            
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s250/sikobaelah.png" alt="Logo Aplikasi" class="landing-logo">
             <h1 class="landing-title">SiKoBaELah</h1>
             <p class="landing-school">SMA NEGERI 15 TEBO</p>
             
-            <button class="btn-portal" onclick="masukPortal()">Launching Aplikasi</button>
+            <div class="desktop-action-btns">
+                <button class="btn-portal" onclick="eksekusiMasuk()">Masuk Portal Aplikasi</button>
+                <div class="row-btns">
+                    <button class="btn-secondary" onclick="window.open('https://sman15tebo.sch.id', '_blank')">🌐 Website</button>
+                    <button class="btn-secondary" onclick="bukaHelpdesk()">🎧 Helpdesk</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="main-portal">
-        
         <div class="header">
             <div class="header-left">
                 <div class="logo-container">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png?text=Logo+Dinas" alt="Logo Instansi">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh35GVy_49H4Y0eQX7Oo37nMSd9yX3NEp84Tsysnr-_fWe3JyHd1Fs-PgakPfIsZ8ly_b-VxhQO8qmo7P8tNkeBeYnqr5Z1E2BxD1VxYqgQr0sABUWiLJ6SfkGFpD_yxmdtSk3LmsfZqcbgnxqnsdJAv1vusaTi51ZktMIFcsuucJthAbmXMAxxMsXG-gYG/s150/logo%20sma.png?text=Logo+Sekolah" alt="Logo Sekolah">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAdFm9jaTc1mVQN42x4KNCwi2YwzWz6NHhbDbsdlSBO97z3VkApM-nj_f1a_YWw7OG__0a0JJcDfHBH1Y6J7hL2T3JK8pV6mEeO_3iuogEHoCjQfWXz1WQl2PWU7UkewLOTkK583KLz7Tun-zRMkS4Aj-qxDvSuP9dYJ_zolGxw9vJNzMvmGBCsgO-B-Ae/s150/Logo%20Provinsi%20Jambi.png" alt="Logo Instansi">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh35GVy_49H4Y0eQX7Oo37nMSd9yX3NEp84Tsysnr-_fWe3JyHd1Fs-PgakPfIsZ8ly_b-VxhQO8qmo7P8tNkeBeYnqr5Z1E2BxD1VxYqgQr0sABUWiLJ6SfkGFpD_yxmdtSk3LmsfZqcbgnxqnsdJAv1vusaTi51ZktMIFcsuucJthAbmXMAxxMsXG-gYG/s150/logo%20sma.png" alt="Logo Sekolah">
                 </div>
                 <div class="agency-name">PEMERINTAH PROVINSI JAMBI</div>
                 <h2 class="school-name">SMA NEGERI 15 TEBO</h2>
                 <p class="school-address">Jl. Yogyakarta, SP2, Sekutur Jaya, Kecamatan Serai Serumpun, Kab. Tebo, Jambi</p>
             </div>
-
             <div class="header-right">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s150/sikobaelah.png?text=Logo+Portal" alt="Logo Aplikasi" class="app-header-logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjSC7KELpD7pikc8nirJBThcELNDOZvc0uk_Xh_0-mAuwbk1kJYliH2b_c2U0Sn-bVKBDSwmrCHZ5YT6S0_sd6ukIkzZKnVqB9AX3sXYOMFXAJXxEVVVK_w05HC2AC0qfgEgDVzlhtO89fZD1hdGKQnOwW-aYSv9mxkrZMmZOZ5ZNkEY4LxO6AOAi84WO7/s150/sikobaelah.png" alt="Logo Aplikasi" class="app-header-logo">
                 <h1 class="app-title">SiKoBaELah</h1>
                 <p class="app-subtitle">Sistem Kolaboratif berBasis Elektronik Sekolah</p>
             </div>
@@ -429,101 +457,150 @@
 
         <div class="app-grid">
             <a href="https://sidimas.sman15tebo.sch.id/" class="app-card bg-gradient-blue" target="_blank">
-                <div class="app-logo-wrapper">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJMjNKEg_eqb9D8_w_NyJSeK7fCB2A9sZNM7y2clH7yd3hk9XvwKC5AbMTeFfZKpKf0v4UxRp18J10z1v0fZ1dUrjE3litei8EMO5VqBEspVNiW-yPpGOZPLA_kBrkGT0Tj7tLDjU9WqP7ALcK9nEd7aS7wnloq1fH1-gyICUy5ODT7nLetVa6TJZqy2ZO/s100/logo%20sidimas%20jpg.jpg?text=Logo+Surat" alt="Logo Surat">
-                </div>
-                <h3>SiDiMAS</h3>
-                <p>Sistem Digital Manajemen Arsip Surat</p>
+                <div class="app-logo-wrapper"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJMjNKEg_eqb9D8_w_NyJSeK7fCB2A9sZNM7y2clH7yd3hk9XvwKC5AbMTeFfZKpKf0v4UxRp18J10z1v0fZ1dUrjE3litei8EMO5VqBEspVNiW-yPpGOZPLA_kBrkGT0Tj7tLDjU9WqP7ALcK9nEd7aS7wnloq1fH1-gyICUy5ODT7nLetVa6TJZqy2ZO/s100/logo%20sidimas%20jpg.jpg" alt="Logo"></div>
+                <h3>SiDiMAS</h3><p>Sistem Digital Manajemen Arsip Surat</p>
             </a>
-
             <a href="https://sibukinstal.sman15tebo.sch.id/" class="app-card bg-gradient-orange" target="_blank">
-                <div class="app-logo-wrapper">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpnOpoQv4zKvXKWgVq_tFB5gKYVbjd8i-fgApUH-b36SrMAaqRX8V7ZFU3bU60gt8I8d77wlTeRI_F8UdMGaZl26EvQw6bBiwtFAygUMiaXSM7tDN-xiPl6r3RguMlwQ3N4BQ-fWaJ62_b318672r9c-iPiGHLhd9y4QHDPBc9SoFpTPwdDp0rkgLf6B4E/s100/Logo%20SiBuk%20InSTal.png?text=Logo+Perpus" alt="Logo Perpus">
-                </div>
-                <h3>SIBukInsTal</h3>
-                <p>Sistem Buku Induk Siswa Digital</p>
+                <div class="app-logo-wrapper"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpnOpoQv4zKvXKWgVq_tFB5gKYVbjd8i-fgApUH-b36SrMAaqRX8V7ZFU3bU60gt8I8d77wlTeRI_F8UdMGaZl26EvQw6bBiwtFAygUMiaXSM7tDN-xiPl6r3RguMlwQ3N4BQ-fWaJ62_b318672r9c-iPiGHLhd9y4QHDPBc9SoFpTPwdDp0rkgLf6B4E/s100/Logo%20SiBuk%20InSTal.png" alt="Logo"></div>
+                <h3>SIBukInsTal</h3><p>Sistem Buku Induk Siswa Digital</p>
             </a>
-
             <a href="https://sie-mpus.sman15tebo.sch.id/" class="app-card bg-gradient-purple" target="_blank">
-                <div class="app-logo-wrapper">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKQaKy8lB3IXcmsdcPpZUorKzNCnUUlT8mEBvkDgnozpJRpbHdld-uSH0fWWOActJnaHg078VQ3GG5vwtr2ydeDh_3O_r5gnEOpcKmVE4-tiz9Blkb4mjVcToRFGJaODrYq_t4V0-8xB_lppMvuIko0OY0bXPrSK7fbMI_vLVGyBbvgUIRD4lI5P4ucoWw/s100/Logo%20SiE-MPus%20baru%20ok.png?text=Logo+Siswa" alt="Logo Buku Induk">
-                </div>
-                <h3>Si-EMPus</h3>
-                <p>Sistem E-Manajemen Perpustakaan Sekolah</p>
+                <div class="app-logo-wrapper"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKQaKy8lB3IXcmsdcPpZUorKzNCnUUlT8mEBvkDgnozpJRpbHdld-uSH0fWWOActJnaHg078VQ3GG5vwtr2ydeDh_3O_r5gnEOpcKmVE4-tiz9Blkb4mjVcToRFGJaODrYq_t4V0-8xB_lppMvuIko0OY0bXPrSK7fbMI_vLVGyBbvgUIRD4lI5P4ucoWw/s100/Logo%20SiE-MPus%20baru%20ok.png" alt="Logo"></div>
+                <h3>Si-EMPus</h3><p>Sistem E-Manajemen Perpustakaan Sekolah</p>
             </a>
-
             <a href="https://siladumas.sman15tebo.sch.id/" class="app-card bg-gradient-green" target="_blank">
-                <div class="app-logo-wrapper">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdjNsHJpiWldIOoTgT0Jbxsv80rvFMNSeK2hILIls9ht9MSXw6HkOjvrZOtSH9lhA2IuLzkJUPHBeS-KPikbt9-MUHP4kH8NqAZ0UaJBPNg0_YtEQwrrXsXD47a49lkASmlBo466vpxVwRt3I-L_7Q-sPw-6rvonKlsXYSjPCxN3__C5CCo9epLC1mJfqV/s100/SiLaDuMas%20logo.png?text=Logo+Nilai" alt="Logo Akademik">
-                </div>
-                <h3>SiLaDuMas</h3>
-                <p>Sistem Layanan Pengaduan Masyarakat</p>
+                <div class="app-logo-wrapper"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdjNsHJpiWldIOoTgT0Jbxsv80rvFMNSeK2hILIls9ht9MSXw6HkOjvrZOtSH9lhA2IuLzkJUPHBeS-KPikbt9-MUHP4kH8NqAZ0UaJBPNg0_YtEQwrrXsXD47a49lkASmlBo466vpxVwRt3I-L_7Q-sPw-6rvonKlsXYSjPCxN3__C5CCo9epLC1mJfqV/s100/SiLaDuMas%20logo.png" alt="Logo"></div>
+                <h3>SiLaDuMas</h3><p>Sistem Layanan Pengaduan Masyarakat</p>
             </a>
         </div> 
 
-        <button class="btn-kembali" onclick="kembaliKeDepan()">
-            &#8592; Kembali ke Halaman Depan
-        </button>
+        <button class="btn-kembali-desktop" onclick="eksekusiKembali()">&#8592; Kembali ke Halaman Depan</button>
 
-        <div class="footer">
-            &copy; 2026 SiKoBaELah - SMA Negeri 15 Tebo.
-        </div>
-
+        <div class="footer">&copy; 2026 SiKoBaELah - SMA Negeri 15 Tebo.</div>
     </div> 
 
-    <script>
-        function masukPortal() {
-            // 1. Mainkan Suara Sorakan
-            const suara = document.getElementById('suara-sorakan');
-            suara.volume = 0.5; // Mengatur volume (opsional)
-            suara.play();
+    <nav class="bottom-nav">
+        <a href="https://sman15tebo.sch.id" target="_blank" class="nav-item">
+            <span class="nav-icon">🌐</span>
+            <span class="nav-label">Website</span>
+        </a>
+        
+        <div class="nav-center-wrapper">
+            <button id="navCenterBtn" class="nav-center-btn" onclick="toggleNavCenter()">
+                <span id="navCenterIcon" class="nav-icon">🚀</span>
+            </button>
+            <span id="navCenterLabel" class="nav-label center-label">Masuk</span>
+        </div>
+        
+        <button class="nav-item" onclick="bukaHelpdesk()">
+            <span class="nav-icon">🎧</span>
+            <span class="nav-label">Helpdesk</span>
+        </button>
+    </nav>
 
-            // 2. Ledakan Kertas Mengkilat (Confetti) menggunakan library
+    <div id="modalHelpdesk" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="tutupHelpdesk()">&times;</span>
+            <h2>Kontak Admin</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">Silakan hubungi kami melalui jalur di bawah ini jika butuh bantuan:</p>
+            <div class="contact-links">
+                <a href="https://wa.me/6281234567890" target="_blank" class="contact-btn btn-wa">💬 WhatsApp</a>
+                <a href="tel:+6281234567890" class="contact-btn btn-telp">📞 Telepon</a>
+                <a href="mailto:admin@sman15tebo.sch.id" class="contact-btn btn-email">✉️ Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Status untuk melacak posisi user (di landing page atau portal)
+        let isDiPortal = false;
+
+        // Fungsi Inti 1: Eksekusi Masuk Portal (Suara, Confetti, Transisi)
+        function eksekusiMasuk() {
+            // Mainkan Suara Sorakan
+            const suara = document.getElementById('suara-sorakan');
+            suara.volume = 0.5;
+            suara.play().catch(e => console.log("Auto-play suara ditahan browser"));
+
+            // Ledakan Kertas Mengkilat (Confetti)
             confetti({
-                particleCount: 200,    // Jumlah kertas
-                spread: 120,           // Lebar ledakan
-                origin: { y: 0.6 },    // Titik awal ledakan (sedikit di bawah tengah)
-                colors: ['#ff007a', '#7000ff', '#0055ff', '#00bfff', '#f6d365'], // Warna senada tema
-                zIndex: 9999           // Memastikan tampil paling depan
+                particleCount: 200, spread: 120, origin: { y: 0.6 },
+                colors: ['#ff007a', '#7000ff', '#0055ff', '#00bfff', '#f6d365'], zIndex: 9999
             });
 
-            // 3. Transisi Halaman
-            const landingPage = document.getElementById('landing-page');
-            const mainPortal = document.getElementById('main-portal');
-
-            // Beri efek pudar perlahan pada halaman landing
-            landingPage.classList.add('fade-out');
-
-            // Tunggu 500ms, lalu hilangkan dan tampilkan portal
+            // Transisi Halaman
+            document.getElementById('landing-page').classList.add('fade-out');
             setTimeout(() => {
-                landingPage.style.display = 'none';
-                
-                // Tampilkan portal utama
-                mainPortal.classList.add('show');
-                
-                // Kembalikan ke paling atas
+                document.getElementById('landing-page').style.display = 'none';
+                document.getElementById('main-portal').classList.add('show');
                 window.scrollTo(0, 0);
             }, 500); 
+
+            // Update Status & Tampilan Tombol Tengah HP
+            isDiPortal = true;
+            updateMenuBawah();
         }
 
-        // TAMBAHAN: Fungsi untuk kembali ke landing page
-        function kembaliKeDepan() {
-            const landingPage = document.getElementById('landing-page');
+        // Fungsi Inti 2: Eksekusi Kembali ke Depan
+        function eksekusiKembali() {
             const mainPortal = document.getElementById('main-portal');
+            const landingPage = document.getElementById('landing-page');
 
-            // 1. Pudarkan portal utama
             mainPortal.classList.remove('show');
-
-            // 2. Tunggu sebentar agar transisi opacity terlihat, lalu tukar tampilan
             setTimeout(() => {
                 landingPage.style.display = 'flex';
-                
-                // Jeda sangat kecil untuk memancing animasi CSS memudar masuk
                 setTimeout(() => {
                     landingPage.classList.remove('fade-out');
                     window.scrollTo(0, 0);
                 }, 50);
             }, 500);
+
+            // Update Status & Tampilan Tombol Tengah HP
+            isDiPortal = false;
+            updateMenuBawah();
+        }
+
+        // Fungsi untuk Navigasi Menu Bawah Tengah (HP)
+        function toggleNavCenter() {
+            if (isDiPortal) {
+                eksekusiKembali();
+            } else {
+                eksekusiMasuk();
+            }
+        }
+
+        // Fungsi Update Ikon & Teks Menu Bawah
+        function updateMenuBawah() {
+            const icon = document.getElementById('navCenterIcon');
+            const label = document.getElementById('navCenterLabel');
+            
+            if (isDiPortal) {
+                // Saat di dalam portal -> Tombol berubah jadi fungsi "Kembali"
+                icon.innerHTML = '🏠'; // Ikon rumah
+                label.innerHTML = 'Portal'; 
+            } else {
+                // Saat di landing page -> Tombol berubah jadi fungsi "Masuk"
+                icon.innerHTML = '🚀'; // Ikon roket
+                label.innerHTML = 'Masuk';
+            }
+        }
+
+        // Fungsi Buka Tutup Helpdesk
+        const modal = document.getElementById('modalHelpdesk');
+        
+        function bukaHelpdesk() {
+            modal.classList.add('show');
+        }
+
+        function tutupHelpdesk() {
+            modal.classList.remove('show');
+        }
+
+        // Tutup Helpdesk jika area gelap/luar modal diklik
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                tutupHelpdesk();
+            }
         }
     </script>
 </body>
