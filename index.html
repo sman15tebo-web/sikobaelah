@@ -1534,7 +1534,7 @@
         <div class="app-grid">
 
             <!-- 1. SiDiMAS -->
-            <a href="https://sidimas.sman15tebo.sch.id/?id=sman15tebo" target="_blank" data-app="sidimas"
+            <a href="https://sidimas.sman15tebo.sch.id" target="_blank" data-app="sidimas"
                 data-online="https://sidimas.sman15tebo.sch.id"
                 onclick="bukaAplikasi('sidimas', this, event); return false;" class="app-card card-arsip">
                 <div class="card-glare"></div>
@@ -1547,7 +1547,7 @@
             </a>
 
             <!-- 2. SiPreSDiR Plus -->
-            <a href="https://sipresdir.sman15tebo.sch.id/?id=sman15tebo" target="_blank" data-app="sipresdir"
+            <a href="https://sipresdir.sman15tebo.sch.id" target="_blank" data-app="sipresdir"
                 data-online="https://sipresdir.sman15tebo.sch.id"
                 onclick="bukaAplikasi('sipresdir', this, event); return false;" class="app-card card-presensi">
                 <div class="card-glare"></div>
@@ -2098,7 +2098,7 @@
             }
 
             // Cari URL Online aplikasi yang dituju
-            let targetOnlineUrl = el ? el.getAttribute('data-online') : null;
+            let targetOnlineUrl = el ? (el.getAttribute('data-online') || el.getAttribute('href')) : null;
             if (!targetOnlineUrl) {
                 const lower = folderName.toLowerCase();
                 for (const [key, url] of Object.entries(URL_ONLINE_APLIKASI)) {
@@ -2109,8 +2109,25 @@
                 }
             }
             if (!targetOnlineUrl) {
-                targetOnlineUrl = 'https://sman15tebo.sch.id';
+                targetOnlineUrl = window.location.origin || './';
             }
+
+            // Teruskan parameter ?id= dan ?exec= secara dinamis jika portal sedang aktif dengan tenant tertentu
+            try {
+                const portalParams = new URLSearchParams(window.location.search);
+                const activeTenantId = portalParams.get('id') || portalParams.get('tenant');
+                const activeExec = portalParams.get('exec');
+                if (targetOnlineUrl && targetOnlineUrl.startsWith('http')) {
+                    const u = new URL(targetOnlineUrl, window.location.href);
+                    if (activeTenantId && !u.searchParams.get('id')) {
+                        u.searchParams.set('id', activeTenantId);
+                    }
+                    if (activeExec && !u.searchParams.get('exec')) {
+                        u.searchParams.set('exec', activeExec);
+                    }
+                    targetOnlineUrl = u.toString();
+                }
+            } catch (e) { }
 
             // Eksekusi Berdasarkan Lingkungan
             if (isDesktopElectron && ipcRenderer) {
