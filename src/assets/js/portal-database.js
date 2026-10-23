@@ -150,431 +150,431 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             {
                 "id": 1,
                 "kategori_app": "spbe",
-                "kata_kunci": "uud 1945 pasal 31 konstitusi pendidikan nasional hak warga negara",
                 "hierarki": "Konstitusi RI",
-                "status": "Berlaku",
                 "nomor_regulasi": "UUD Negara Republik Indonesia 1945",
                 "judul_regulasi": "Pasal 31 ayat (1) dan ayat (3) tentang Hak Pendidikan dan Sistem Pendidikan Nasional",
                 "keterkaitan": "Keterkaitan dengan SiKoBaELah: Menjadi landasan tertinggi bahwa setiap warga negara berhak mendapatkan pendidikan bermutu, dan pemerintah menyelenggarakan satu sistem pendidikan nasional yang mencerdaskan kehidupan bangsa melalui pemanfaatan kemajuan teknologi.",
                 "lembaran_negara": "Pemerintah RI",
-                "link_jdih": "https://peraturan.bpk.go.id",
-                "label_jdih": "JDIH RI"
+                "link_jdih": "https://jdih.bp2mi.go.id/uploads/20191011/20191011093525_6_UUD45_Tahun_1945_Tentang_Perubahan_Keempat_UUD45.pdf",
+                "label_jdih": "JDIH RI",
+                "status": "Berlaku",
+                "kata_kunci": "uud 1945 pasal 31 konstitusi pendidikan nasional hak warga negara"
             },
             {
                 "id": 2,
                 "kategori_app": "spbe",
-                "kata_kunci": "uu nomor 20 tahun 2003 undang-undang sisdiknas sistem pendidikan nasional standar kurikulum",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 20 Tahun 2003",
                 "judul_regulasi": "Tentang Sistem Pendidikan Nasional (Sisdiknas)",
                 "keterkaitan": "Keterkaitan dengan SiKoBaELah: Pasal 48 dan Pasal 51 mengamanatkan pengelolaan dana dan sistem pendidikan yang berprinsip pada keadilan, efisiensi, transparansi, dan akuntabilitas publik. SiKoBaELah mengotomasi tata kelola sekolah secara akuntabel.",
                 "lembaran_negara": "Lembaran Negara 2003 No. 78",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/43920/uu-no-20-tahun-2003",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 20 tahun 2003 undang-undang sisdiknas sistem pendidikan nasional standar kurikulum"
             },
             {
                 "id": 3,
                 "kategori_app": "spbe",
-                "kata_kunci": "perpres nomor 95 tahun 2018 peraturan presiden sistem pemerintahan berbasis elektronik spbe digitalisasi",
                 "hierarki": "Perpres",
-                "status": "Berlaku",
                 "nomor_regulasi": "Perpres No. 95 Tahun 2018",
                 "judul_regulasi": "Tentang Sistem Pemerintahan Berbasis Elektronik (SPBE)",
                 "keterkaitan": "Keterkaitan dengan SiKoBaELah: Payung hukum utama kewajiban integrasi layanan instansi pemerintah dan satuan pendidikan berbasis TIK terpadu demi mewujudkan tata kelola birokrasi yang bersih, terpadu, dan berkinerja tinggi.",
                 "lembaran_negara": "Lembaran Negara 2018 No. 182",
                 "link_jdih": "https://peraturan.bpk.go.id/Details/95328/perpres-no-95-tahun-2018",
-                "label_jdih": "JDIH BPK"
+                "label_jdih": "JDIH BPK",
+                "status": "Berlaku",
+                "kata_kunci": "perpres nomor 95 tahun 2018 peraturan presiden sistem pemerintahan berbasis elektronik spbe digitalisasi"
             },
             {
                 "id": 4,
                 "kategori_app": "spbe",
-                "kata_kunci": "uu nomor 27 tahun 2022 pelindungan data pribadi pdp enkripsi privasi kerahasiaan siswa guru",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 27 Tahun 2022",
                 "judul_regulasi": "Tentang Pelindungan Data Pribadi (UU PDP)",
                 "keterkaitan": "Keterkaitan dengan SiKoBaELah: Memberikan standar kepatuhan hukum bagi sekolah sebagai Pengendali Data Pribadi untuk menjamin privasi NIK, NISN, riwayat keluarga, dan data pegawai guru tidak disalahgunakan atau bocor ke pihak luar.",
                 "lembaran_negara": "Lembaran Negara 2022 No. 196",
                 "link_jdih": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022",
-                "label_jdih": "JDIH BPK"
+                "label_jdih": "JDIH BPK",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 27 tahun 2022 pelindungan data pribadi pdp enkripsi privasi kerahasiaan siswa guru"
             },
             {
                 "id": 5,
                 "kategori_app": "spbe",
-                "kata_kunci": "uu nomor 1 tahun 2024 ite informasi transaksi elektronik tanda tangan digital surat elektronik",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "UU No. 1 Tahun 2024 jo. UU No. 11/2008",
                 "judul_regulasi": "Tentang Informasi dan Transaksi Elektronik (UU ITE)",
                 "keterkaitan": "Keterkaitan dengan SiKoBaELah: Pasal 5 menyatakan bahwa Informasi Elektronik dan/atau Dokumen Elektronik merupakan alat bukti hukum yang sah. Seluruh catatan digital, presensi, surat dinas, dan nomor inventaris SiKoBaELah memiliki kekuatan hukum.",
                 "lembaran_negara": "Lembaran Negara 2024 No. 1",
-                "link_jdih": "https://jdih.kominfo.go.id",
-                "label_jdih": "JDIH Kominfo"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/274494/uu-no-1-tahun-2024",
+                "label_jdih": "JDIH Kominfo",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 1 tahun 2024 ite informasi transaksi elektronik tanda tangan digital surat elektronik"
             },
             {
                 "id": 6,
                 "kategori_app": "sidimas",
-                "kata_kunci": "uu nomor 43 tahun 2009 kearsipan arsip dinamis autentik terpercaya sidimas",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 43 Tahun 2009",
                 "judul_regulasi": "Tentang Kearsipan",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Pasal 3 mewajibkan penyelenggara negara dan lembaga pendidikan untuk menjamin ketersediaan arsip yang autentik dan tepercaya, mengelola arsip dinamis secara tertib, dan memanfaatkan kemajuan TIK dalam penyelenggaraan kearsipan.",
                 "lembaran_negara": "Lembaran Negara 2009 No. 152",
-                "link_jdih": "https://anri.go.id",
-                "label_jdih": "JDIH ANRI"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/38788/uu-no-43-tahun-2009",
+                "label_jdih": "JDIH ANRI",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 43 tahun 2009 kearsipan arsip dinamis autentik terpercaya sidimas"
             },
             {
                 "id": 7,
                 "kategori_app": "sidimas",
-                "kata_kunci": "pp nomor 28 tahun 2012 kearsipan pelaksanaan alih media arsip digital disposisi",
                 "hierarki": "PP RI",
-                "status": "Berlaku",
                 "nomor_regulasi": "Peraturan Pemerintah No. 28 Tahun 2012",
                 "judul_regulasi": "Tentang Pelaksanaan Undang-Undang Nomor 43 Tahun 2009 tentang Kearsipan",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Mengatur tata cara penciptaan, penerimaan, pendistribusian surat, penggunaan lembar disposisi, serta legalitas alih media arsip kertas ke bentuk digital/PDF pada tata usaha sekolah.",
                 "lembaran_negara": "Lembaran Negara 2012 No. 53",
                 "link_jdih": "https://peraturan.bpk.go.id/Details/5253/pp-no-28-tahun-2012",
-                "label_jdih": "JDIH BPK"
+                "label_jdih": "JDIH BPK",
+                "status": "Berlaku",
+                "kata_kunci": "pp nomor 28 tahun 2012 kearsipan pelaksanaan alih media arsip digital disposisi"
             },
             {
                 "id": 8,
                 "kategori_app": "sidimas",
-                "kata_kunci": "permendikbud nomor 60 tahun 2016 tata naskah dinas kemendikbud penomoran format surat",
-                "hierarki": "Permendikbud",
-                "status": "Berlaku",
-                "nomor_regulasi": "Permendikbud No. 60 Tahun 2016",
+                "hierarki": "Permendikdasmen",
+                "nomor_regulasi": "Permendikdasmen No. 60 Tahun 2026",
                 "judul_regulasi": "Tentang Tata Naskah Dinas di Lingkungan Kemendikbud",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Standar kode klasifikasi surat, penulisan nomor agenda surat keluar/masuk, format kepala surat resmi, cap kedinasan, dan formulir disposisi kepala sekolah yang diadopsi pada fitur SiDiMAS.",
-                "lembaran_negara": "Berita Negara 2016 No. 2097",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "lembaran_negara": "Kemendikdasmen RI 2026",
+                "link_jdih": "https://peraturan.go.id/id/permendikdasmen-no-2-tahun-2026",
+                "label_jdih": "JDIH Kemendikdasmen",
+                "status": "Berlaku",
+                "kata_kunci": "permendikdasmen nomor 60 tahun 2026 Tata Naskah Dinas Kementerian Pendidikan Dasar dan Menengah"
             },
             {
                 "id": 9,
                 "kategori_app": "sidimas",
-                "kata_kunci": "peraturan anri nomor 6 tahun 2021 arsip dinamis terintegrasi srikandi elektronik metadata",
                 "hierarki": "Peraturan ANRI",
-                "status": "Berlaku",
                 "nomor_regulasi": "Peraturan ANRI No. 6 Tahun 2021",
                 "judul_regulasi": "Tentang Pengelolaan Arsip Elektronik di Instansi Pemerintah",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Panduan standar metadata arsip digital, integritas audit trail riwayat naskah, pencarian berbasis keyword, dan retensi penyimpanan arsip surat elektronik di sekolah.",
                 "lembaran_negara": "Berita Negara 2021 No. 1381",
-                "link_jdih": "https://jdih.anri.go.id",
-                "label_jdih": "JDIH ANRI"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/192784/peraturan-anri-no-6-tahun-2021",
+                "label_jdih": "JDIH ANRI",
+                "status": "Berlaku",
+                "kata_kunci": "peraturan anri nomor 6 tahun 2021 arsip dinamis terintegrasi srikandi elektronik metadata"
             },
             {
                 "id": 10,
                 "kategori_app": "sidimas",
-                "kata_kunci": "permendagri nomor 83 tahun 2022 kode klasifikasi arsip fasilitatif substantif pemda penomoran agenda surat dinas",
                 "hierarki": "Permendagri",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendagri No. 83 Tahun 2022",
                 "judul_regulasi": "Tentang Kode Klasifikasi Arsip di Lingkungan Kementerian Dalam Negeri dan Pemerintah Daerah",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Pedoman baku pengkodean klasifikasi arsip fasilitatif dan substantif untuk seluruh satuan pendidikan/sekolah (misal kode urusan 421 Pendidikan, 421.3 SMA, 800 Kepegawaian, 005 Undangan) yang diotomasi secara terintegrasi pada penomoran surat masuk dan keluar di SiDiMAS.",
                 "lembaran_negara": "Berita Negara 2022 No. 1195",
-                "link_jdih": "https://jdih.kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/247841/permendagri-no-83-tahun-2022",
+                "label_jdih": "JDIH Kemendagri",
+                "status": "Berlaku",
+                "kata_kunci": "permendagri nomor 83 tahun 2022 kode klasifikasi arsip fasilitatif substantif pemda penomoran agenda surat dinas"
             },
             {
                 "id": 11,
                 "kategori_app": "sidimas",
-                "kata_kunci": "permendagri nomor 1 tahun 2023 tata naskah dinas pemerintah daerah pemda nota dinas surat tugas sk disposisi cap stempel",
                 "hierarki": "Permendagri",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendagri No. 1 Tahun 2023",
                 "judul_regulasi": "Tentang Tata Naskah Dinas di Lingkungan Pemerintah Daerah",
                 "keterkaitan": "Keterkaitan dengan SiDiMAS: Regulasi induk tata naskah dinas pemda yang wajib dipedomani sekolah negeri di bawah naungan pemerintah provinsi. Mengatur format baku surat dinas, nota dinas, surat tugas, SK, lembar disposisi elektronik, serta standarisasi lambang daerah dan stempel resmi pada SiDiMAS.",
                 "lembaran_negara": "Berita Negara 2023 No. 78",
-                "link_jdih": "https://jdih.kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/245536/permendagri-no-1-tahun-2023",
+                "label_jdih": "JDIH Kemendagri",
+                "status": "Berlaku",
+                "kata_kunci": "permendagri nomor 1 tahun 2023 tata naskah dinas pemerintah daerah pemda nota dinas surat tugas sk disposisi cap stempel"
             },
             {
                 "id": 12,
                 "kategori_app": "sipresdir",
-                "kata_kunci": "permendikbudristek nomor 46 tahun 2023 ppksp pencegahan penanganan kekerasan disiplin positif pembinaan",
                 "hierarki": "Permendikbudristek",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbudristek No. 46 Tahun 2023",
                 "judul_regulasi": "Pencegahan dan Penanganan Kekerasan di Lingkungan Satuan Pendidikan (PPKSP)",
                 "keterkaitan": "Keterkaitan dengan SiPreSDiR Plus: Mendasari modul penanganan kasus ketertiban siswa dengan paradigma disiplin positif edukatif (bukan hukuman fisik), serta pencatatan kasus konseling terpadu bersama Guru BK dan wali kelas.",
                 "lembaran_negara": "Berita Negara 2023 No. 621",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/285721/permendikbudriset-no-46-tahun-2023",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbudristek nomor 46 tahun 2023 ppksp pencegahan penanganan kekerasan disiplin positif pembinaan"
             },
             {
                 "id": 13,
                 "kategori_app": "sipresdir",
-                "kata_kunci": "permendikbud nomor 23 tahun 2015 budi pekerti pembiasaan kehadiran tepat waktu apel",
                 "hierarki": "Permendikbud",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbud No. 23 Tahun 2015",
                 "judul_regulasi": "Tentang Penumbuhan Budi Pekerti",
                 "keterkaitan": "Keterkaitan dengan SiPreSDiR Plus: Landasan pembiasaan apel pagi, ketepatan waktu hadir, tanggung jawab kehadiran siswa di ruang kelas, dan transparansi laporan presensi harian kepada orang tua siswa.",
                 "lembaran_negara": "Berita Negara 2015 No. 1083",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "link_jdih": "https://peraturan.go.id/id/permendikbud-no-23-tahun-2015",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbud nomor 23 tahun 2015 budi pekerti pembiasaan kehadiran tepat waktu apel"
             },
             {
                 "id": 14,
                 "kategori_app": "sipresdir",
-                "kata_kunci": "permendikbud nomor 111 tahun 2014 bimbingan konseling bk konselor rekam catatan pembinaan",
                 "hierarki": "Permendikbud",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbud No. 111 Tahun 2014",
                 "judul_regulasi": "Tentang Bimbingan dan Konseling pada Pendidikan Dasar dan Pendidikan Menengah",
                 "keterkaitan": "Keterkaitan dengan SiPreSDiR Plus: Memberikan legitimasi bagi Guru BK untuk mendokumentasikan asesmen perilaku, frekuensi ketidakhadiran, konseling individual, dan tindak lanjut panggilan wali murid secara terstruktur di sistem.",
                 "lembaran_negara": "Berita Negara 2014 No. 1599",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "link_jdih": "https://peraturan.go.id/id/permendikbud-no-111-tahun-2014",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbud nomor 111 tahun 2014 bimbingan konseling bk konselor rekam catatan pembinaan"
             },
             {
                 "id": 15,
                 "kategori_app": "sibukinstal",
-                "kata_kunci": "permendikbud nomor 31 tahun 2014 nisn nomor induk siswa nasional satu data pendidikan",
                 "hierarki": "Permendikbud",
-                "status": "Berlaku",
-                "nomor_regulasi": "Permendikbud No. 31 Tahun 2014",
+                "nomor_regulasi": "Permendikbudristek No. 31 Tahun 2022",
                 "judul_regulasi": "Tentang Satu Data Pendidikan & Pengelolaan NISN",
                 "keterkaitan": "Keterkaitan dengan SiBukInSTal: Kewajiban pencatatan NISN sebagai kode pengenal unik siswa yang bersifat tunggal, berlaku seumur hidup, dan terintegrasi dengan basis data kependudukan nasional (Dukcapil).",
-                "lembaran_negara": "Berita Negara 2014 No. 444",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "lembaran_negara": "Kemendikbudristek 2022",
+                "link_jdih": "https://peraturan.bpk.go.id/Details/224733/permendikbudriset-no-31-tahun-2022",
+                "label_jdih": "JDIH Kemendikbudristek",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbudristek nomor 31 tahun 2022 nisn nomor induk siswa nasional satu data pendidikan"
             },
             {
                 "id": 16,
                 "kategori_app": "sibukinstal",
-                "kata_kunci": "permendikbud nomor 79 tahun 2015 dapodik data pokok pendidikan validasi mutasi",
                 "hierarki": "Permendikbud",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbud No. 79 Tahun 2015",
                 "judul_regulasi": "Tentang Data Pokok Pendidikan (Dapodik)",
                 "keterkaitan": "Keterkaitan dengan SiBukInSTal: Standarisasi elemen data profil peserta didik (identitas, ayah, ibu, wali, riwayat mutasi masuk/keluar, nomor registrasi akta lahir) yang disinkronkan langsung pada buku induk digital sekolah.",
                 "lembaran_negara": "Berita Negara 2016 No. 22",
-                "link_jdih": "https://dapo.kemdikbud.go.id",
-                "label_jdih": "Portal Dapodik"
+                "link_jdih": "https://peraturan.go.id/id/permendikbud-no-79-tahun-2015",
+                "label_jdih": "Portal Dapodik",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbud nomor 79 tahun 2015 dapodik data pokok pendidikan validasi mutasi"
             },
             {
                 "id": 17,
                 "kategori_app": "sibukinstal",
-                "kata_kunci": "permendiknas nomor 19 tahun 2007 standar pengelolaan pendidikan buku induk abadi kesiswaan",
                 "hierarki": "Permendiknas",
-                "status": "Berlaku",
-                "nomor_regulasi": "Permendiknas No. 19 Tahun 2007",
-                "judul_regulasi": "Tentang Standar Pengelolaan Pendidikan oleh Satuan Pendidikan Dasar dan Menengah",
+                "nomor_regulasi": "Permendikbudristek No 47 Tahun 2023",
+                "judul_regulasi": "Standar Pengelolaan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
                 "keterkaitan": "Keterkaitan dengan SiBukInSTal: Menetapkan bahwa Buku Induk Siswa adalah dokumen negara permanen dan abadi yang wajib dimiliki serta dirawat oleh setiap sekolah untuk legalitas riwayat alumni dan administrasi ijazah.",
-                "lembaran_negara": "Pemerintah RI",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "lembaran_negara": "JDIH Permendikbudristek",
+                "link_jdih": "https://peraturan.bpk.go.id/Details/289462/permendikbudriset-no-47-tahun-2023",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "Standar Pengelolaan pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah"
             },
             {
                 "id": 18,
                 "kategori_app": "siempus",
-                "kata_kunci": "uu nomor 43 tahun 2007 perpustakaan pasal 23 perpustakaan sekolah bosp 5 persen",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 43 Tahun 2007",
                 "judul_regulasi": "Tentang Perpustakaan",
                 "keterkaitan": "Keterkaitan dengan SiE-MPuS: Pasal 23 ayat (1)-(6) mewajibkan setiap sekolah menyelenggarakan perpustakaan berstandar nasional, menyediakan buku teks dan bacaan berkualitas, mengalokasikan minimal 5% dana operasional, dan mengembangkan layanan perpustakaan berbasis TIK.",
                 "lembaran_negara": "Lembaran Negara 2007 No. 129",
-                "link_jdih": "https://perpusnas.go.id",
-                "label_jdih": "JDIH Perpusnas"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/39968/uu-no-43-tahun-2007",
+                "label_jdih": "JDIH Perpusnas",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 43 tahun 2007 perpustakaan pasal 23 perpustakaan sekolah bosp 5 persen"
             },
             {
                 "id": 19,
                 "kategori_app": "siempus",
-                "kata_kunci": "peraturan perpusnas nomor 12 tahun 2017 snp sma standar nasional perpustakaan ddc barcode katalog",
                 "hierarki": "Peraturan Perpusnas",
-                "status": "Berlaku",
                 "nomor_regulasi": "Peraturan Perpusnas No. 12 Tahun 2017",
                 "judul_regulasi": "Standar Nasional Perpustakaan Sekolah Menengah Atas / Madrasah Aliyah (SNP SMA/MA)",
                 "keterkaitan": "Keterkaitan dengan SiE-MPuS: Standar sistem klasifikasi DDC (Dewey Decimal Classification), pencetakan barcode kartu anggota, sirkulasi peminjaman buku elektronik, dan pelaporan rasio koleksi buku di sekolah.",
                 "lembaran_negara": "Perpustakaan Nasional RI",
-                "link_jdih": "https://perpusnas.go.id",
-                "label_jdih": "JDIH Perpusnas"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/297058/perka-perpusnas-no-12-tahun-2017",
+                "label_jdih": "JDIH Perpusnas",
+                "status": "Berlaku",
+                "kata_kunci": "peraturan perpusnas nomor 12 tahun 2017 snp sma standar nasional perpustakaan ddc barcode katalog"
             },
             {
                 "id": 20,
                 "kategori_app": "siempus",
-                "kata_kunci": "pp nomor 24 tahun 2014 perpustakaan pelaksanaan sirkulasi digital preservasi",
                 "hierarki": "PP RI",
-                "status": "Berlaku",
                 "nomor_regulasi": "Peraturan Pemerintah No. 24 Tahun 2014",
                 "judul_regulasi": "Tentang Pelaksanaan Undang-Undang Nomor 43 Tahun 2007 tentang Perpustakaan",
                 "keterkaitan": "Keterkaitan dengan SiE-MPuS: Memberikan dasar regulasi pelestarian materi perpustakaan, pencatatan donasi buku, serta sistem layanan peminjaman digital bagi guru dan peserta didik.",
                 "lembaran_negara": "Lembaran Negara 2014 No. 76",
-                "link_jdih": "https://peraturan.bpk.go.id/Details/4470/pp-no-24-tahun-2014",
-                "label_jdih": "JDIH BPK"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/5461/pp-no-24-tahun-2014",
+                "label_jdih": "JDIH BPK",
+                "status": "Berlaku",
+                "kata_kunci": "pp nomor 24 tahun 2014 perpustakaan pelaksanaan sirkulasi digital preservasi"
             },
             {
                 "id": 21,
                 "kategori_app": "simpeel",
-                "kata_kunci": "uu nomor 20 tahun 2023 asn aparatur sipil negara pns pppk meritokrasi simpeg bkn",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 20 Tahun 2023",
                 "judul_regulasi": "Tentang Aparatur Sipil Negara (UU ASN)",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Mendasari digitalisasi rekam jejak integritas ASN/PPPK di sekolah, pemutakhiran riwayat kepangkatan, pendidikan berkala, serta integrasi sistem informasi kepegawaian berbasis meritokrasi.",
                 "lembaran_negara": "Lembaran Negara 2023 No. 141",
-                "link_jdih": "https://bkn.go.id",
-                "label_jdih": "JDIH BKN"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/269470/uu-no-20-tahun-2023",
+                "label_jdih": "JDIH BKN",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 20 tahun 2023 asn aparatur sipil negara pns pppk meritokrasi simpeg bkn"
             },
             {
                 "id": 22,
                 "kategori_app": "simpeel",
-                "kata_kunci": "uu nomor 14 tahun 2005 guru dan dosen beban kerja 24 jam sertifikasi tpg",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 14 Tahun 2005",
                 "judul_regulasi": "Tentang Guru dan Dosen",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Landasan kepatuhan pemenuhan kualifikasi akademik pendidik, hak tunjangan profesi guru (TPG), dan pemenuhan beban kerja tatap muka minimal 24 jam per minggu di satuan pendidikan.",
                 "lembaran_negara": "Lembaran Negara 2005 No. 157",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/40266/uu-no-14-tahun-2005",
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 14 tahun 2005 guru dan dosen beban kerja 24 jam sertifikasi tpg"
             },
             {
                 "id": 23,
                 "kategori_app": "simpeel",
-                "kata_kunci": "kepmendagri 900.1.15.5-1317 tahun 2023 kepmenpan-rb 656 tahun 2023 nomenklatur jabatan pelaksana tendik tenaga kependidikan tata usaha pengadministrasi perkantoran operator penata layanan",
-                "hierarki": "Kepmendagri",
-                "status": "Berlaku",
-                "nomor_regulasi": "Kepmendagri No. 900.1.15.5-1317 Th 2023",
-                "judul_regulasi": "jo. KepmenPAN-RB No. 656 Th 2023 tentang Nomenklatur Jabatan Pelaksana di Lingkungan Instansi Pemerintah Daerah",
+                "hierarki": "Kepmenpan RB",
+                "nomor_regulasi": "KepmenPAN-RB No. 656 Th 2023",
+                "judul_regulasi": "Tentang Nomenklatur Jabatan Pelaksana di Lingkungan Instansi Pemerintah Daerah",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Standarisasi nama nomenklatur dan peta formasi jabatan pelaksana tenaga kependidikan di sekolah (seperti Pengadministrasi Perkantoran, Penata Layanan Operasional, Pengelola Layanan Operasional, dan Operator Layanan Operasional) sesuai klasifikasi tugas Pemda dan BKN.",
-                "lembaran_negara": "Kemendagri &amp; KemenPAN-RB",
-                "link_jdih": "https://jdih.kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "lembaran_negara": "KemenPAN-RB",
+                "link_jdih": "https://peraturan.bpk.go.id/Details/284839/kemen-panrb-no-656-tahun-2023",
+                "label_jdih": "JDIH Kemenpan RB",
+                "status": "Berlaku",
+                "kata_kunci": "kepmenpan-rb 656 tahun 2023 nomenklatur jabatan pelaksana tendik tenaga kependidikan tata usaha pengadministrasi perkantoran operator penata layanan"
             },
             {
                 "id": 24,
                 "kategori_app": "simpeel",
-                "kata_kunci": "permendikdasmen nomor 21 tahun 2025 standar tenaga kependidikan pendidik guru tendik tas tata administrasi kualifikasi kompetensi kemendikdasmen 2025",
                 "hierarki": "Permendikdasmen",
-                "status": "Berlaku",
-                "nomor_regulasi": "Permendikdasmen No. 21 Tahun 2025",
+                "nomor_regulasi": "Permendikdasmen No. 23 Tahun 2026",
                 "judul_regulasi": "Standar Tenaga Kependidikan pada PAUD, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Regulasi induk terbaru Kementerian Pendidikan Dasar dan Menengah tahun 2025 yang memayungi Standarisasi Pendidik (kualifikasi akademik S1/D4 & 4 pilar kompetensi guru) serta Standar Tenaga Kependidikan selain pendidik (Tenaga Administrasi Sekolah/TAS, Tenaga Perpustakaan, Tenaga Laboratorium, dan Pengelola Data). Menjadi acuan pemutakhiran data kualifikasi, kompetensi, dan formasi kepegawaian di sekolah.",
-                "lembaran_negara": "Kemendikdasmen RI 2025",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikdasmen"
+                "lembaran_negara": "Kemendikdasmen RI 2026",
+                "link_jdih": "https://peraturan.go.id/id/permendikdasmen-no-23-tahun-2026",
+                "label_jdih": "JDIH Kemendikdasmen",
+                "status": "Berlaku",
+                "kata_kunci": "permendikdasmen nomor 23 tahun 2026 standar tenaga kependidikan pendidik guru tendik tas tata administrasi kualifikasi kompetensi kemendikdasmen 2025"
             },
             {
                 "id": 25,
                 "kategori_app": "simpeel",
-                "kata_kunci": "permendikbudristek nomor 19 tahun 2024 pendidikan profesi guru ppg sertifikasi guru serdik pmm nrg uji kompetensi ukpppg",
                 "hierarki": "Permendikbudristek",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbudristek No. 19 Tahun 2024",
                 "judul_regulasi": "Tentang Pendidikan Profesi Guru (PPG) dan Sertifikasi Pendidik",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Payung hukum penyelesaian sertifikasi guru (khususnya Guru Tertentu / Dalam Jabatan) melalui mekanisme pembelajaran fleksibel, penerbitan Sertifikat Pendidik (Serdik), serta pencatatan Nomor Registrasi Guru (NRG) pada basis data kepegawaian sekolah.",
                 "lembaran_negara": "Berita Negara 2024 No. 256",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikdasmen"
+                "link_jdih": "https://peraturan.bpk.go.id/Details/287342/permendikbudriset-no-19-tahun-2024",
+                "label_jdih": "JDIH Kemendikdasmen",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbudristek nomor 19 tahun 2024 pendidikan profesi guru ppg sertifikasi guru serdik pmm nrg uji kompetensi ukpppg"
             },
             {
                 "id": 26,
                 "kategori_app": "simpeel",
-                "kata_kunci": "permendikbudristek nomor 45 tahun 2023 permendikdasmen petunjuk teknis juknis tpg tunjangan profesi guru tunjangan khusus tambahan penghasilan tamsil sktp info gtk",
                 "hierarki": "Permendikbudristek",
-                "status": "Berlaku",
-                "nomor_regulasi": "Permendikbudristek No. 45 Tahun 2023 jo. Juknis 2025",
-                "judul_regulasi": "Petunjuk Teknis Pemberian Tunjangan Profesi, Tunjangan Khusus, dan Tambahan Penghasilan Guru ASN Daerah",
+                "nomor_regulasi": "Permendikdasmen No 10 Tahun 2026",
+                "judul_regulasi": "Tentang Petunjuk Teknis Pemberian Tunjangan Profesi Tunjangan Khusus dan Tambahan Penghasilan Guru Aparatur Sipil Negara Daerah",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Pedoman baku pencairan Tunjangan Profesi Guru (TPG) sebesar satu kali gaji pokok per bulan, validasi linieritas tugas mengajar minimal 24 jam tatap muka melalui sinkronisasi Dapodik dan Info GTK, penerbitan SKTP, serta penyaluran Tambahan Penghasilan (Tamsil) bagi guru ASN yang belum bersertifikat pendidik di sekolah.",
                 "lembaran_negara": "Kemendikdasmen RI",
-                "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikdasmen"
+                "link_jdih": "https://peraturan.go.id/id/permendikdasmen-no-10-tahun-2026",
+                "label_jdih": "JDIH Kemendikdasmen",
+                "status": "Berlaku",
+                "kata_kunci": "permendikdasmen nomor 10 tahun 2026 permendikdasmen petunjuk teknis juknis tpg tunjangan profesi guru tunjangan khusus tambahan penghasilan tamsil sktp info gtk"
             },
             {
                 "id": 27,
                 "kategori_app": "siladumas",
-                "kata_kunci": "uu nomor 25 tahun 2009 pelayanan publik bab vii pengelolaan pengaduan komplain masyarakat sp4n lapor",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 25 Tahun 2009",
                 "judul_regulasi": "Tentang Pelayanan Publik",
                 "keterkaitan": "Keterkaitan dengan SiLaDuMas: Bab VII (Pasal 36 s.d. 49) mewajibkan setiap unit pelayanan publik (termasuk SMA Negeri) menyediakan sarana pengelolaan pengaduan, menunjuk petugas pengelola aduan yang kompeten, dan wajib memberikan respon serta tindak lanjut transparan.",
                 "lembaran_negara": "Lembaran Negara 2009 No. 112",
                 "link_jdih": "https://menpan.go.id",
-                "label_jdih": "JDIH KemenPAN-RB"
+                "label_jdih": "JDIH KemenPAN-RB",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 25 tahun 2009 pelayanan publik bab vii pengelolaan pengaduan komplain masyarakat sp4n lapor"
             },
             {
                 "id": 28,
                 "kategori_app": "siladumas",
-                "kata_kunci": "uu nomor 14 tahun 2008 keterbukaan informasi publik kip transparansi sekolah akuntabilitas",
                 "hierarki": "Undang-Undang",
-                "status": "Berlaku",
                 "nomor_regulasi": "Undang-Undang No. 14 Tahun 2008",
                 "judul_regulasi": "Tentang Keterbukaan Informasi Publik (KIP)",
                 "keterkaitan": "Keterkaitan dengan SiLaDuMas: Menjamin hak warga sekolah, orang tua siswa, dan masyarakat luas untuk memperoleh informasi publik secara transparan serta menyalurkan kritik membangun demi peningkatan mutu layanan sekolah.",
                 "lembaran_negara": "Lembaran Negara 2008 No. 61",
                 "link_jdih": "https://komisiinformasi.go.id",
-                "label_jdih": "Komisi Informasi"
+                "label_jdih": "Komisi Informasi",
+                "status": "Berlaku",
+                "kata_kunci": "uu nomor 14 tahun 2008 keterbukaan informasi publik kip transparansi sekolah akuntabilitas"
             },
             {
                 "id": 29,
                 "kategori_app": "siladumas",
-                "kata_kunci": "permenpan-rb nomor 62 tahun 2018 pedoman pengaduan pelayanan publik tiket respon perlindungan pelapor",
                 "hierarki": "PermenPAN-RB",
-                "status": "Berlaku",
                 "nomor_regulasi": "PermenPAN-RB No. 62 Tahun 2018",
                 "judul_regulasi": "Pedoman Sistem Pengaduan Pelayanan Publik Nasional Terintegrasi (SP4N-LAPOR!)",
                 "keterkaitan": "Keterkaitan dengan SiLaDuMas: Memberikan standar nomor tiket pengaduan unik, mekanisme klasifikasi laporan (Aspirasi, Permintaan Informasi, atau Pengaduan), batas waktu SLA penanganan, serta kerahasiaan identitas pelapor (whistleblower).",
                 "lembaran_negara": "Berita Negara 2018 No. 1827",
                 "link_jdih": "https://lapor.go.id",
-                "label_jdih": "Portal LAPOR!"
+                "label_jdih": "Portal LAPOR!",
+                "status": "Berlaku",
+                "kata_kunci": "permenpan-rb nomor 62 tahun 2018 pedoman pengaduan pelayanan publik tiket respon perlindungan pelapor"
             },
             {
                 "id": 30,
                 "kategori_app": "sinbas",
-                "kata_kunci": "permendagri nomor 108 tahun 2016 penggolongan kodefikasi barang milik daerah bmd kib a kib b kib c kib d kib e kib f aset sekolah",
                 "hierarki": "Permendagri",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendagri No. 108 Tahun 2016",
                 "judul_regulasi": "Tentang Penggolongan dan Kodefikasi Barang Milik Daerah (BMD)",
                 "keterkaitan": "Keterkaitan dengan SINBAS: Dasar kodefikasi hierarki aset (Akun, Kelompok, Jenis, Objek, Rincian Objek, Sub Rincian Objek) pada KIB A (Tanah), KIB B (Peralatan/Mesin), KIB C (Gedung), KIB D (Jalan/Jaringan), KIB E (Buku/Aset Lain), dan KIB F (Konstruksi) di lingkungan sekolah. (Dokumen tersimpan di sistem sinbas/dasar hukum).",
                 "lembaran_negara": "Berita Negara 2016 No. 2083",
                 "link_jdih": "https://kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "label_jdih": "JDIH Kemendagri",
+                "status": "Berlaku",
+                "kata_kunci": "permendagri nomor 108 tahun 2016 penggolongan kodefikasi barang milik daerah bmd kib a kib b kib c kib d kib e kib f aset sekolah"
             },
             {
                 "id": 31,
                 "kategori_app": "sinbas",
-                "kata_kunci": "permendagri nomor 47 tahun 2021 pembukuan inventarisasi pelaporan barang milik daerah bmd sensus barang buku inventaris mutasi",
                 "hierarki": "Permendagri",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendagri No. 47 Tahun 2021",
                 "judul_regulasi": "Tata Cara Pelaksanaan Pembukuan, Inventarisasi, dan Pelaporan Barang Milik Daerah",
                 "keterkaitan": "Keterkaitan dengan SINBAS: Mengatur tata cara penyusunan Buku Inventaris (BI), Laporan Mutasi Barang Semesteran/Tahunan, sensus barang berkala lima tahunan, serta inventarisasi fisik barang inventaris ruangan (KIR). (Dokumen referensi di sinbas/dasar hukum).",
                 "lembaran_negara": "Berita Negara 2021 No. 1478",
                 "link_jdih": "https://kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "label_jdih": "JDIH Kemendagri",
+                "status": "Berlaku",
+                "kata_kunci": "permendagri nomor 47 tahun 2021 pembukuan inventarisasi pelaporan barang milik daerah bmd sensus barang buku inventaris mutasi"
             },
             {
                 "id": 32,
                 "kategori_app": "sinbas",
-                "kata_kunci": "permendagri nomor 7 tahun 2024 perubahan permendagri 19 2016 pedoman pengelolaan barang milik daerah bmd aset daerah",
                 "hierarki": "Permendagri",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendagri No. 7 Tahun 2024 jo. No. 19/2016",
                 "judul_regulasi": "Perubahan atas Pedoman Pengelolaan Barang Milik Daerah",
                 "keterkaitan": "Keterkaitan dengan SINBAS: Penyempurnaan tata kelola aset daerah terkini, pedoman siklus hidup barang (perencanaan, pengadaan, penatausahaan, pemeliharaan, pengamanan, hingga penghapusan aset rusak berat di sekolah). (Tersedia di sinbas/dasar hukum).",
                 "lembaran_negara": "Kemendagri RI 2024",
                 "link_jdih": "https://kemendagri.go.id",
-                "label_jdih": "JDIH Kemendagri"
+                "label_jdih": "JDIH Kemendagri",
+                "status": "Berlaku",
+                "kata_kunci": "permendagri nomor 7 tahun 2024 perubahan permendagri 19 2016 pedoman pengelolaan barang milik daerah bmd aset daerah"
             },
             {
                 "id": 33,
                 "kategori_app": "sinbas",
-                "kata_kunci": "permendikbudristek nomor 22 tahun 2023 standar sarana prasarana sekolah ruang kelas laboratorium ruang perpustakaan",
                 "hierarki": "Permendikbudristek",
-                "status": "Berlaku",
                 "nomor_regulasi": "Permendikbudristek No. 22 Tahun 2023",
                 "judul_regulasi": "Standar Sarana dan Prasarana pada PAUD, Pendidikan Dasar, dan Pendidikan Menengah",
                 "keterkaitan": "Keterkaitan dengan SINBAS: Menetapkan rasio kecukupan perabot belajar, standar ruang laboratorium, buku perpustakaan, peralatan TIK, serta kelayakan fasilitas gedung penunjang proses belajar mengajar di sekolah.",
                 "lembaran_negara": "Berita Negara 2023 No. 384",
                 "link_jdih": "https://jdih.kemdikbud.go.id",
-                "label_jdih": "JDIH Kemendikbud"
+                "label_jdih": "JDIH Kemendikbud",
+                "status": "Berlaku",
+                "kata_kunci": "permendikbudristek nomor 22 tahun 2023 standar sarana prasarana sekolah ruang kelas laboratorium ruang perpustakaan"
             }
         ],
 
@@ -712,6 +712,23 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
         },
 
         /**
+         * Sinkronisasi ke SQLite Desktop jika berjalan di Electron
+         */
+        persistToSqlite: function (action, payload) {
+            try {
+                if (typeof window !== 'undefined' && window.electronAPI && window.electronAPI.sikobaelahDB) {
+                    const sDb = window.electronAPI.sikobaelahDB;
+                    if (action === 'saveConfig' && typeof sDb.saveConfig === 'function') sDb.saveConfig(payload).catch(() => { });
+                    else if (action === 'saveApp' && typeof sDb.saveApp === 'function') sDb.saveApp(payload).catch(() => { });
+                    else if (action === 'deleteApp' && typeof sDb.deleteApp === 'function') sDb.deleteApp(payload).catch(() => { });
+                    else if (action === 'saveLaw' && typeof sDb.saveLaw === 'function') sDb.saveLaw(payload).catch(() => { });
+                    else if (action === 'deleteLaw' && typeof sDb.deleteLaw === 'function') sDb.deleteLaw(payload).catch(() => { });
+                    else if (action === 'pushAll' && typeof sDb.pushAll === 'function') sDb.pushAll(payload).catch(() => { });
+                }
+            } catch (_) { }
+        },
+
+        /**
          * Simpan / Perbarui Pengaturan Sekolah ke Database
          */
         saveConfigData: async function (configData) {
@@ -719,6 +736,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             const updated = Object.assign({}, current, configData);
             localStorage.setItem(this.STORAGE_KEY_CONFIG, JSON.stringify(updated));
 
+            this.persistToSqlite('saveConfig', configData);
             const res = await this.callApi('saveConfig', configData);
             window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', { detail: { config: updated } }));
             return res;
@@ -744,6 +762,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             }
 
             localStorage.setItem(this.STORAGE_KEY_APPS, JSON.stringify(apps));
+            this.persistToSqlite('saveApp', appObj);
             const res = await this.callApi('saveApp', appObj);
             window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', { detail: { apps: apps } }));
             return res;
@@ -758,6 +777,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             apps = apps.filter(a => String(a.id).trim() !== targetId);
 
             localStorage.setItem(this.STORAGE_KEY_APPS, JSON.stringify(apps));
+            this.persistToSqlite('deleteApp', targetId);
             const res = await this.callApi('deleteApp', { id: targetId });
             window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', { detail: { apps: apps } }));
             return res;
@@ -791,6 +811,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             }
 
             localStorage.setItem(this.STORAGE_KEY_LAWS, JSON.stringify(laws));
+            this.persistToSqlite('saveLaw', lawObj);
             const res = await this.callApi('saveLaw', lawObj);
             window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', { detail: { laws: laws } }));
             return res;
@@ -805,6 +826,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             laws = laws.filter(l => Number(l.id) !== targetId);
 
             localStorage.setItem(this.STORAGE_KEY_LAWS, JSON.stringify(laws));
+            this.persistToSqlite('deleteLaw', targetId);
             const res = await this.callApi('deleteLaw', { id: targetId });
             window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', { detail: { laws: laws } }));
             return res;
@@ -858,6 +880,9 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
                     }
 
                     localStorage.setItem(this.STORAGE_KEY_LAST_SYNC, new Date().toISOString());
+
+                    // Simpan hasil sinkronisasi cloud langsung ke SQLite3 Desktop
+                    this.persistToSqlite('pushAll', res.data);
 
                     window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', {
                         detail: { config: config, apps: apps, laws: laws }
@@ -919,18 +944,48 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
         if (!document.hidden) autoSyncLiveCloud();
     });
 
-    // Jika berjalan di lingkungan Desktop Offline (Electron), otomatis ambil URL dari config-offline.js
+    // Jika berjalan di lingkungan Desktop Offline (Electron), otomatis ambil URL dari config-offline.js & muat data dari SQLite3
     if (typeof window !== 'undefined') {
         window.addEventListener('DOMContentLoaded', () => {
-            if (window.electronAPI && typeof window.electronAPI.getOfflineConfig === 'function') {
-                window.electronAPI.getOfflineConfig().then(offCfg => {
-                    if (offCfg && (offCfg.masterPortalExecUrl || offCfg.execUrl)) {
-                        const offUrl = String(offCfg.masterPortalExecUrl || offCfg.execUrl || '').trim();
-                        if (offUrl) {
-                            SIKOBAELAH_DB.setGasUrl(offUrl);
+            if (window.electronAPI) {
+                if (typeof window.electronAPI.getOfflineConfig === 'function') {
+                    window.electronAPI.getOfflineConfig().then(offCfg => {
+                        if (offCfg && (offCfg.masterPortalExecUrl || offCfg.execUrl)) {
+                            const offUrl = String(offCfg.masterPortalExecUrl || offCfg.execUrl || '').trim();
+                            if (offUrl) {
+                                SIKOBAELAH_DB.setGasUrl(offUrl);
+                            }
                         }
-                    }
-                }).catch(() => { });
+                    }).catch(() => { });
+                }
+
+                // Ambil data offline langsung dari file sikobaelah.sqlite
+                if (window.electronAPI.sikobaelahDB && typeof window.electronAPI.sikobaelahDB.getAll === 'function') {
+                    window.electronAPI.sikobaelahDB.getAll().then(dbData => {
+                        if (dbData) {
+                            const { config, apps, laws } = dbData;
+                            let hasChange = false;
+                            if (config && Object.keys(config).length > 0) {
+                                const merged = Object.assign({}, SIKOBAELAH_DB.getConfig(), config);
+                                localStorage.setItem(SIKOBAELAH_DB.STORAGE_KEY_CONFIG, JSON.stringify(merged));
+                                hasChange = true;
+                            }
+                            if (Array.isArray(apps) && apps.length > 0) {
+                                localStorage.setItem(SIKOBAELAH_DB.STORAGE_KEY_APPS, JSON.stringify(apps));
+                                hasChange = true;
+                            }
+                            if (Array.isArray(laws) && laws.length > 0) {
+                                localStorage.setItem(SIKOBAELAH_DB.STORAGE_KEY_LAWS, JSON.stringify(laws));
+                                hasChange = true;
+                            }
+                            if (hasChange) {
+                                window.dispatchEvent(new CustomEvent('sikobaelah:data-updated', {
+                                    detail: { config: config, apps: apps, laws: laws }
+                                }));
+                            }
+                        }
+                    }).catch(e => console.warn('[SiKoBaELah SQLite Load]', e));
+                }
             }
         });
     }
