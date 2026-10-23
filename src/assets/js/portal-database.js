@@ -824,10 +824,11 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
                     this.setGasUrl(overrideUrl);
                 }
 
-                const fetchUrl = url + (url.includes('?') ? '&' : '?') + 'action=getAll';
+                const fetchUrl = url + (url.includes('?') ? '&' : '?') + 'action=getAll&_t=' + Date.now();
                 const response = await fetch(fetchUrl, {
                     method: 'GET',
                     headers: { 'Accept': 'application/json' },
+                    cache: 'no-store',
                     redirect: 'follow'
                 });
 
@@ -898,13 +899,24 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
 
     window.SIKOBAELAH_DB = SIKOBAELAH_DB;
 
-    // Otomatis sinkronisasi saat online di latar belakang
-    window.addEventListener('load', () => {
-        if (navigator.onLine && SIKOBAELAH_DB.getGasUrl()) {
-            setTimeout(() => {
-                SIKOBAELAH_DB.syncFromCloud();
-            }, 1000);
+    // Otomatis sinkronisasi saat online secara instan & saat tab difokuskan
+    function autoSyncLiveCloud() {
+        if (typeof navigator !== 'undefined' && navigator.onLine && SIKOBAELAH_DB.getGasUrl()) {
+            SIKOBAELAH_DB.syncFromCloud().catch(err => console.warn('[SiKoBaELah AutoSync]', err));
         }
+    }
+
+    // Jalankan segera saat halaman dibuka
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', autoSyncLiveCloud);
+    } else {
+        autoSyncLiveCloud();
+    }
+
+    // Jalankan juga saat tab kembali aktif (agar jika spreadsheet diedit di tab lain, langsung berubah)
+    window.addEventListener('focus', autoSyncLiveCloud);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) autoSyncLiveCloud();
     });
 
     // Jika berjalan di lingkungan Desktop Offline (Electron), otomatis ambil URL dari config-offline.js
