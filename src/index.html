@@ -3697,6 +3697,17 @@
         });
 
         // --- 11. DYNAMIC DATABASE SINKRONISASI DARI GOOGLE SPREADSHEET ---
+        function resolveImgPath(p) {
+            if (!p) return './assets/img/sikobaelah.png';
+            p = String(p).trim();
+            if (p.startsWith('http://') || p.startsWith('https://') || p.startsWith('data:') || p.startsWith('blob:')) {
+                return p;
+            }
+            if (p.startsWith('./assets/img/')) return p;
+            if (p.startsWith('assets/img/')) return './' + p;
+            return './assets/img/' + p;
+        }
+
         function terapkanDataDariDatabase() {
             if (typeof SIKOBAELAH_DB === 'undefined') return;
             const cfg = SIKOBAELAH_DB.getConfig();
@@ -3723,17 +3734,17 @@
                 // Terapkan 3 Logo Dinamis (Aplikasi, Instansi, Sekolah)
                 if (cfg.logo_aplikasi) {
                     const lLanding = document.getElementById('landingLogoImg');
-                    if (lLanding) lLanding.src = './assets/img/' + cfg.logo_aplikasi;
+                    if (lLanding) lLanding.src = resolveImgPath(cfg.logo_aplikasi);
                     const lHeader = document.getElementById('headerLogoApp');
-                    if (lHeader) lHeader.src = './assets/img/' + cfg.logo_aplikasi;
+                    if (lHeader) lHeader.src = resolveImgPath(cfg.logo_aplikasi);
                 }
                 if (cfg.logo_instansi) {
                     const lInstansi = document.getElementById('headerLogoInstansi');
-                    if (lInstansi) lInstansi.src = './assets/img/' + cfg.logo_instansi;
+                    if (lInstansi) lInstansi.src = resolveImgPath(cfg.logo_instansi);
                 }
                 if (cfg.logo_sekolah) {
                     const lSekolah = document.getElementById('headerLogoSekolah');
-                    if (lSekolah) lSekolah.src = './assets/img/' + cfg.logo_sekolah;
+                    if (lSekolah) lSekolah.src = resolveImgPath(cfg.logo_sekolah);
                 }
 
                 // Terapkan Tema Gradasi Background 3 Warna Dinamis
@@ -3767,7 +3778,7 @@
                 if (mInstansi) mInstansi.textContent = (cfg.nama_sekolah || 'SMA NEGERI 15 TEBO') + ' • ' + (cfg.pemprov || 'PEMERINTAH PROVINSI JAMBI');
 
                 const mFoto = document.getElementById('modalDevFoto');
-                if (mFoto) mFoto.src = './assets/img/' + (cfg.dev_foto || 'sikobaelah.png');
+                if (mFoto) mFoto.src = resolveImgPath(cfg.dev_foto || 'sikobaelah.png');
 
                 const devAlamat = cfg.dev_alamat || cfg.alamat_sekolah || 'Jl. Yogyakarta, SP2, Sekutur Jaya, Serai Serumpun, Tebo, Jambi';
                 const mAlamat = document.getElementById('modalDevAlamat');
@@ -3809,7 +3820,7 @@
                 if (mEmailLink) mEmailLink.href = 'mailto:' + devEmail;
             }
 
-            // Terapkan URL Online & Label dari Sheet Aplikasi
+            // Terapkan URL Online, Logo & Label dari Sheet Aplikasi
             if (Array.isArray(apps) && apps.length > 0) {
                 apps.forEach(app => {
                     const card = document.querySelector(`[data-app="${app.id}"]`);
@@ -3826,6 +3837,10 @@
                             const badge = card.querySelector('.card-badge');
                             if (badge) badge.textContent = app.kategori;
                         }
+                        if (app.logo) {
+                            const img = card.querySelector('.app-logo-wrapper img');
+                            if (img) img.src = resolveImgPath(app.logo);
+                        }
                         if (app.url_online) {
                             card.setAttribute('data-online', app.url_online);
                             card.href = app.url_online;
@@ -3833,6 +3848,25 @@
                         }
                         if (app.kata_kunci) {
                             card.setAttribute('data-search', app.kata_kunci);
+                        }
+                        const ribbon = card.querySelector('.card-dev-ribbon');
+                        if (app.status === 'aktif') {
+                            card.classList.remove('card-dev-gray');
+                            if (ribbon) ribbon.style.display = 'none';
+                            card.onclick = function (e) {
+                                bukaAplikasi(app.id, this, e);
+                                return false;
+                            };
+                        } else if (app.status === 'dev') {
+                            card.classList.add('card-dev-gray');
+                            if (ribbon) {
+                                ribbon.style.display = 'block';
+                                if (app.ribbon) ribbon.textContent = app.ribbon;
+                            }
+                            card.onclick = function (e) {
+                                bukaAplikasiPengembangan(app.nama || app.id, app.deskripsi || '', app.logo || './assets/img/sikobaelah.png');
+                                return false;
+                            };
                         }
                     }
                 });
