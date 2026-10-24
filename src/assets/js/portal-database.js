@@ -437,14 +437,14 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
                 "id": 23,
                 "kategori_app": "simpeel",
                 "hierarki": "Kepmenpan RB",
-                "nomor_regulasi": "KepmenPAN-RB No. 656 Th 2023",
-                "judul_regulasi": "Tentang Nomenklatur Jabatan Pelaksana di Lingkungan Instansi Pemerintah Daerah",
+                "nomor_regulasi": "KepmenPAN-RB No. 282 Th 2025",
+                "judul_regulasi": "Tentang Nomenklatur Jabatan Pelaksana ASN di Lingkungan Instansi Pemerintah",
                 "keterkaitan": "Keterkaitan dengan SiMPeEL: Standarisasi nama nomenklatur dan peta formasi jabatan pelaksana tenaga kependidikan di sekolah (seperti Pengadministrasi Perkantoran, Penata Layanan Operasional, Pengelola Layanan Operasional, dan Operator Layanan Operasional) sesuai klasifikasi tugas Pemda dan BKN.",
                 "lembaran_negara": "KemenPAN-RB",
-                "link_jdih": "https://peraturan.bpk.go.id/Details/284839/kemen-panrb-no-656-tahun-2023",
+                "link_jdih": "https://peraturan.bpk.go.id/Details/353243/kemen-panrb-no-282-tahun-2025",
                 "label_jdih": "JDIH Kemenpan RB",
                 "status": "Berlaku",
-                "kata_kunci": "kepmenpan-rb 656 tahun 2023 nomenklatur jabatan pelaksana tendik tenaga kependidikan tata usaha pengadministrasi perkantoran operator penata layanan"
+                "kata_kunci": "kepmenpan-rb 282 tahun 2025 nomenklatur jabatan pelaksana tendik tenaga kependidikan tata usaha pengadministrasi perkantoran operator penata layanan"
             },
             {
                 "id": 24,
