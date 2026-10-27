@@ -12,7 +12,7 @@
         rel="stylesheet">
 
     <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="./assets/js/portal-database.js"></script>
+    <script src="./assets/js/portal-database.js?v=20261027-prototype-links"></script>
 
 
     <style>
@@ -3382,8 +3382,12 @@
             'sibukinstal': 'https://sibukinstal.sman15tebo.sch.id',
             'siempus': 'https://siempus.sman15tebo.sch.id',
             'simpeel': 'https://simpeel.sman15tebo.sch.id',
-            'siladumas': 'https://siladumas.sman15tebo.sch.id',
+            'siladumas': 'https://simpeel.sman15tebo.sch.id',
             'sinbas': 'https://sinbas.sman15tebo.sch.id'
+        };
+        const URL_PROTOTIPE_ONLINE = {
+            siladumas: 'https://simpeel.sman15tebo.sch.id',
+            sinbas: 'https://sinbas.sman15tebo.sch.id'
         };
 
         // Deteksi apakah sedang di Desktop App (Electron) atau di Web Online (GitHub Pages / Domain)
@@ -3625,7 +3629,7 @@
 
             const card = Array.from(document.querySelectorAll('#appGridContainer .app-card'))
                 .find(item => item.getAttribute('data-app') === appId);
-            let targetUrl = (card && card.getAttribute('data-online')) || URL_ONLINE_APLIKASI[appId];
+            let targetUrl = URL_PROTOTIPE_ONLINE[appId];
             if (!targetUrl || !/^https?:\/\//i.test(targetUrl)) {
                 Swal.fire('Prototipe tidak tersedia', 'Tautan prototipe aplikasi belum diatur.', 'warning');
                 return;
@@ -3648,18 +3652,7 @@
             sound.playClick();
             tutupAlertDev();
             if (isDesktopElectron && ipcRenderer) {
-                if (appId === 'sinbas') {
-                    ipcRenderer.send('launch-app', appId);
-                } else {
-                    ipcRenderer.invoke('open-prototype-url', targetUrl).then(result => {
-                        if (!result || !result.success) {
-                            Swal.fire('Prototipe tidak dapat dibuka', result?.message || 'Tautan prototipe gagal dibuka.', 'error');
-                        }
-                    }).catch(error => {
-                        console.error('[SiKoBaELah] Gagal membuka prototipe:', error);
-                        Swal.fire('Prototipe tidak dapat dibuka', 'Gagal membuka tautan prototipe di browser.', 'error');
-                    });
-                }
+                ipcRenderer.send('launch-app', appId);
                 return;
             }
 
