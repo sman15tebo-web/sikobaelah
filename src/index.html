@@ -1085,6 +1085,29 @@
             box-shadow: 0 6px 22px rgba(13, 110, 253, 0.5);
         }
 
+        .btn-dev-prototype {
+            background: #fff;
+            color: #2563eb;
+            border: 1px solid #93c5fd;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 0.94rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-dev-prototype:hover {
+            background: #eff6ff;
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+        }
+
         /* Hover: Color Morphing + Glowing Backlight */
         .app-card:hover {
             background-position: 100% 100%;
@@ -2716,7 +2739,7 @@
             <!-- 6. SiLaDuMas (Dalam Pengembangan - Gradien Abu-abu) -->
             <a href="javascript:void(0)" data-app="siladumas"
                 data-search="siladumas siladuman sistem layanan pengaduan masyarakat aspirasi publik saran aduan sekolah lapor wbs"
-                onclick="bukaAplikasiPengembangan('SiLaDuMas', 'Sistem Layanan Pengaduan Masyarakat', './logo-siladumas.png'); return false;"
+                onclick="bukaAplikasiPengembangan('SiLaDuMas', 'Sistem Layanan Pengaduan Masyarakat', './logo-siladumas.png', 'siladumas'); return false;"
                 class="app-card card-dev-gray">
                 <div class="card-glare"></div>
                 <div class="card-dev-ribbon">Rilis Berikutnya</div>
@@ -2732,7 +2755,7 @@
             <!-- 7. SINBAS (Dalam Pengembangan - Gradien Abu-abu) -->
             <a href="javascript:void(0)" data-app="sinbas"
                 data-search="sinbas sistem inventarisasi barang dan aset sekolah sarana prasarana sarpras kib bmd permendagri aset inventaris"
-                onclick="bukaAplikasiPengembangan('SINBAS', 'Sistem Inventarisasi Barang & Aset Sekolah', './logo-sinbas.png'); return false;"
+                onclick="bukaAplikasiPengembangan('SINBAS', 'Sistem Inventarisasi Barang & Aset Sekolah', './logo-sinbas.png', 'sinbas'); return false;"
                 class="app-card card-dev-gray">
                 <div class="card-glare"></div>
                 <div class="card-dev-ribbon">Rilis Berikutnya</div>
@@ -3121,12 +3144,20 @@
                 </p>
             </div>
 
-            <button type="button" class="btn-dev-close" onclick="tutupAlertDev()">
-                <span>Saya Mengerti</span>
-                <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-                </svg>
-            </button>
+            <div class="d-flex flex-column align-items-center gap-2">
+                <button type="button" class="btn-dev-close" onclick="tutupAlertDev()">
+                    <span>Saya Mengerti</span>
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                    </svg>
+                </button>
+                <button type="button" id="btnDevPrototype" class="btn-dev-prototype" onclick="bukaPrototipeDev()" hidden>
+                    <span>Lihat Prototipe</span>
+                    <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
+                        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -3562,7 +3593,7 @@
         }
 
         // Alert Khusus Aplikasi Dalam Pengembangan (SiLaDuMas & SINBAS)
-        function bukaAplikasiPengembangan(namaApp, subApp, logoUrl) {
+        function bukaAplikasiPengembangan(namaApp, subApp, logoUrl, appId = '') {
             sound.playClick();
             if (window.confetti) {
                 confetti({
@@ -3577,12 +3608,67 @@
             const titleEl = document.getElementById('devModalTitle');
             const subEl = document.getElementById('devModalSubtitle');
             const logoEl = document.getElementById('devModalLogo');
+            const prototypeButton = document.getElementById('btnDevPrototype');
 
             if (titleEl) titleEl.textContent = namaApp;
             if (subEl) subEl.textContent = subApp;
             if (logoEl && logoUrl) logoEl.src = logoUrl;
+            if (modalDevAlert) modalDevAlert.dataset.prototypeAppId = appId;
+            if (prototypeButton) prototypeButton.hidden = !['siladumas', 'sinbas'].includes(appId);
 
             if (modalDevAlert) modalDevAlert.classList.add('show');
+        }
+
+        function bukaPrototipeDev() {
+            const appId = modalDevAlert && modalDevAlert.dataset.prototypeAppId;
+            if (!['siladumas', 'sinbas'].includes(appId)) return;
+
+            const card = Array.from(document.querySelectorAll('#appGridContainer .app-card'))
+                .find(item => item.getAttribute('data-app') === appId);
+            let targetUrl = (card && card.getAttribute('data-online')) || URL_ONLINE_APLIKASI[appId];
+            if (!targetUrl || !/^https?:\/\//i.test(targetUrl)) {
+                Swal.fire('Prototipe tidak tersedia', 'Tautan prototipe aplikasi belum diatur.', 'warning');
+                return;
+            }
+
+            try {
+                const currentParams = new URLSearchParams(window.location.search);
+                const url = new URL(targetUrl, window.location.href);
+                const tenantId = currentParams.get('id') || currentParams.get('tenant');
+                const execUrl = currentParams.get('exec');
+                if (tenantId && !url.searchParams.has('id')) url.searchParams.set('id', tenantId);
+                if (execUrl && !url.searchParams.has('exec')) url.searchParams.set('exec', execUrl);
+                targetUrl = url.toString();
+            } catch (error) {
+                console.error('[SiKoBaELah] URL prototipe tidak valid:', error);
+                Swal.fire('Prototipe tidak dapat dibuka', 'Tautan prototipe aplikasi tidak valid.', 'error');
+                return;
+            }
+
+            sound.playClick();
+            tutupAlertDev();
+            if (isDesktopElectron && ipcRenderer) {
+                if (appId === 'sinbas') {
+                    ipcRenderer.send('launch-app', appId);
+                } else {
+                    ipcRenderer.invoke('open-prototype-url', targetUrl).then(result => {
+                        if (!result || !result.success) {
+                            Swal.fire('Prototipe tidak dapat dibuka', result?.message || 'Tautan prototipe gagal dibuka.', 'error');
+                        }
+                    }).catch(error => {
+                        console.error('[SiKoBaELah] Gagal membuka prototipe:', error);
+                        Swal.fire('Prototipe tidak dapat dibuka', 'Gagal membuka tautan prototipe di browser.', 'error');
+                    });
+                }
+                return;
+            }
+
+            const appWindow = window.open(targetUrl, '_blank');
+            if (appWindow) {
+                appWindow.opener = null;
+            } else {
+                Swal.fire('Prototipe belum terbuka', 'Izinkan pop-up untuk situs ini, lalu klik Lihat Prototipe kembali.', 'warning');
+            }
         }
 
         function tutupAlertDev() {
@@ -3797,15 +3883,18 @@
                 if (mCoordsLink) mCoordsLink.href = 'https://www.google.com/maps?q=' + encodeURIComponent(devCoords);
 
                 // Kontak Interaktif (WhatsApp, Telepon, Email)
-                const devWa = cfg.dev_wa || cfg.wa_helpdesk || '6285219901909';
-                const cleanWa = String(devWa).replace(/[^0-9]/g, '');
-                const waUrl = 'https://wa.me/' + cleanWa;
+                const devWa = String(cfg.dev_wa || '6285219901909').trim();
+                let cleanWa = devWa.replace(/\D/g, '');
+                if (cleanWa.startsWith('00')) cleanWa = cleanWa.slice(2);
+                if (cleanWa.startsWith('0')) cleanWa = '62' + cleanWa.slice(1);
+                else if (cleanWa.startsWith('8')) cleanWa = '62' + cleanWa;
+                const waUrl = cleanWa ? 'https://wa.me/' + cleanWa : '';
                 const mWa = document.getElementById('modalDevWa');
-                if (mWa) mWa.textContent = devWa.startsWith('62') ? '0' + devWa.substring(2) : devWa;
+                if (mWa) mWa.textContent = cleanWa.startsWith('62') ? '0' + cleanWa.substring(2) : devWa;
                 const mWaLink = document.getElementById('modalDevWaLink');
-                if (mWaLink) mWaLink.href = waUrl;
+                if (mWaLink) mWaLink.href = waUrl || 'javascript:void(0)';
                 const mQuickWa = document.getElementById('modalQuickWa');
-                if (mQuickWa) mQuickWa.href = waUrl;
+                if (mQuickWa) mQuickWa.href = waUrl || 'javascript:void(0)';
 
                 const devTelp = cfg.dev_telp || cfg.telp_helpdesk || '+6285219901909';
                 const mTelp = document.getElementById('modalDevTelp');
@@ -3864,7 +3953,7 @@
                                 if (app.ribbon) ribbon.textContent = app.ribbon;
                             }
                             card.onclick = function (e) {
-                                bukaAplikasiPengembangan(app.nama || app.id, app.deskripsi || '', app.logo || './assets/img/sikobaelah.png');
+                                bukaAplikasiPengembangan(app.nama || app.id, app.deskripsi || '', app.logo || './assets/img/sikobaelah.png', app.id);
                                 return false;
                             };
                         }
