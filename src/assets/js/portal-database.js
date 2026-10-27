@@ -122,7 +122,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
                 "kategori": "Dalam Pengembangan",
                 "card_class": "card-dev-gray",
                 "ribbon": "Rilis Berikutnya",
-                "url_online": "https://siladumas.sman15tebo.sch.id",
+                "url_online": "https://simpeel.sman15tebo.sch.id",
                 "logo": "./assets/img/logo-siladumas.png",
                 "logo_fallback": "../siladumas/logo.png",
                 "kata_kunci": "siladumas siladuman sistem layanan pengaduan masyarakat aspirasi publik saran aduan sekolah lapor wbs",
@@ -681,8 +681,11 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
             }
 
             // Fallback Offline Login (Default: admin / admin123)
-            const expectedUser = cfg.admin_user || 'admin';
-            const expectedPass = cfg.admin_pass || 'admin123';
+            const offlineConfig = window.electronAPI && typeof window.electronAPI.getOfflineConfig === 'function'
+                ? await window.electronAPI.getOfflineConfig()
+                : {};
+            const expectedUser = cfg.admin_user || offlineConfig.offlineAdminUser || 'admin';
+            const expectedPass = cfg.admin_pass || offlineConfig.offlineAdminPass || 'admin123';
             if (u === expectedUser && p === expectedPass) {
                 const sessionData = { username: u, token: 'local_auth_' + Date.now(), isOffline: true };
                 sessionStorage.setItem('sikobaelah_auth', JSON.stringify(sessionData));
