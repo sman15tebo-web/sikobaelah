@@ -122,7 +122,7 @@ const SIKOBAELAH_GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbx0fp13
                 "kategori": "Dalam Pengembangan",
                 "card_class": "card-dev-gray",
                 "ribbon": "Rilis Berikutnya",
-                "url_online": "https://simpeel.sman15tebo.sch.id",
+                "url_online": "https://siladumas.sman15tebo.sch.id",
                 "logo": "./assets/img/logo-siladumas.png",
                 "logo_fallback": "../siladumas/logo.png",
                 "kata_kunci": "siladumas siladuman sistem layanan pengaduan masyarakat aspirasi publik saran aduan sekolah lapor wbs",
